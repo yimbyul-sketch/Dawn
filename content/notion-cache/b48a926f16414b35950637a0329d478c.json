@@ -1,0 +1,341 @@
+{
+  "id": "b48a926f16414b35950637a0329d478c",
+  "title": "[ABMLLR01] 선형회귀의 기반 지식",
+  "blocks": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어디쯤 왔어요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Python으로 구현 능력을 갖춘 뒤 인공지능과 기계학습, 딥 러닝이 무엇인지 알아보았어요.",
+        "기계학습이 소프트웨어에 적용되는 맥락과, 달성 가능한 작업인 예측, 분류, 군집화에 대해서도 알아보았어요.",
+        "선형회귀분석을 첫 주제로 잡고 공부를 시작했어요.",
+        "선형회귀분석이 무엇인지, 왜 하는지 알아보았어요.",
+        "이 문서에서는 선형회귀분석을 이해하기 위해 필요한 여러 가지 기반 지식들을 익힐 거예요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "배우면 뭐가 좋아요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "선형회귀분석을 제대로 이해하기 위한 기반을 갖추게 될 거예요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어떻게 해요? 예를 들면요?"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 도구로 사용되는 수학에 관하여"
+    },
+    {
+      "type": "paragraph",
+      "text": "이 문서에서는 수학을 목적이 아니라 인공지능을 이해하고 구현하기 위한 수단으로 사용해요. 그러니까 새로운 개념 이해가 필요한 부분은 없고, 몇몇 공식이나 규칙을 '그렇다더라' 하고 받아들여 사용할 수 있는 수준이면 충분해요."
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 짧은 개념들"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 편미분(Partial Derivative)"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "대학교에 가면 ⁍같은 다변수함수를 배우고, 이런 함수를 편미분하는 방법도 배우게 돼요. 편미분이란 미분하고자 하는 대상만 변수로 보고, 나머지 변수를 상수 취급해서 미분하는 거예요.",
+        "예를 들어 ⁍의 ⁍에 대한 편미분은 다음과 같아요(∂은 d와 같이 '디'나 '라운드', ‘라운드 디’ 또는 '파셜 디' 등으로 읽어요)."
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "⁍에 대한 편미분은 다음과 같아요."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 시그마(⁍)를 포함한 식의 미분"
+    },
+    {
+      "type": "paragraph",
+      "text": "고등학교 수학 교육과정에 포함되어 있지는 않지만, 유한 개의 항을 더하는 상황에서 다음이 성립한다고 해요."
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 평균(Mean)"
+    },
+    {
+      "type": "paragraph",
+      "text": "⁍의 평균은 ⁍로 표기하며, 다음과 같이 구할 수 있어요."
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 분산(Variance)"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "분산은 중학생 때 배운 후 고등학교 교육과정의 확률과 통계 과목에서 다시 등장해요. 기억하지 못하는 분들을 위해서 다시 설명하자면, 분산은 '데이터가 평균으로부터 얼마나 떨어져 있는지 한 눈에 알아보기 위한 지표'예요. 이를 위해 각 데이터의 편차(=변량-평균, 즉 ⁍번째 변량의 편차는 ⁍)를 제곱하여 평균을 구하면 분산을 얻을 수 있어요. 이때 편차가 아닌 편차의 제곱을 대상으로 평균을 구하는 이유는, 음수인 편차와 양수의 편차를 단순히 더하면 부호 간 상쇄가 일어나기 때문이에요.",
+        "⁍의 분산은 ⁍ 또는 ⁍로 표기하며, ⁍의 표준편차(⁍)를 제곱한 값이라는 뜻에서 ⁍라고 표기하기도 해요.",
+        "그럼 분산을 구하는 식을 세우고, 전개해볼까요?"
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "전개하니까 공식 같은 결과물이 나왔죠? 결과물을 말로 풀어서 설명하면, 편차 제곱의 평균인 ⁍의 분산은, 각 데이터(변량)의 제곱을 평균 낸 값에서 데이터 평균의 제곱을 빼서도 구할 수 있다는 거예요."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 표준편차(Standard Deviation)"
+    },
+    {
+      "type": "paragraph",
+      "text": "⁍의 표준편차는 ⁍로 표기하며 다음과 같이 구할 수 있어요."
+    },
+    {
+      "type": "paragraph",
+      "text": "분산을 구할 때 부호를 없애기 위해 편차를 제곱해서 사용(Scale Up)했었죠? 따라서 크기를 다시 줄이기 위해(Scale Down) 양의 제곱근을 구하는 것이라 생각하면 돼요."
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 공분산(Covariance)"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "고등학교 수학 교육과정에서는 보통 다루지 않아요. 하지만 전혀 어렵지 않으니 간단하게 알아볼까요?",
+        "분산의 정의를 알고 있다면 공분산의 정의를 받아들이기는 쉬워요. 분산이란 편차 제곱들의 평균, 즉 '⁍의 편차와 ⁍의 편차의 곱'들을 대상으로 평균을 계산한 것이었죠? 공분산은 ⁍의 편차와 ⁍의 편차의 곱들을 대상으로 평균을 구한 거예요.",
+        "즉, ‘편차 제곱의 평균’이 분산이었고, ‘편차 간 곱의 평균’이 공분산인 거죠.",
+        "⁍와 ⁍의 공분산은 ⁍ 또는 ⁍로 표기해요.",
+        "공분산을 구하는 식을 세우고 전개해볼까요?"
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "전개하니까 공식 같은 결과물이 나왔죠? 결과물을 말로 풀어서 설명하면, ⁍의 편차와 ⁍의 편차 간 곱의 평균인 ⁍와 ⁍의 공분산은, 대응하는 ⁍데이터(변량)와 ⁍데이터의 곱을 평균 낸 값에서 ⁍데이터와 ⁍데이터 각각의 평균 간 곱을 빼서도 구할 수 있다는 거예요.",
+        "대개 ⁍와 ⁍의 단위가 다르니까 공분산 그 자체로는 의미 있는 값이 되기 어려워요. 하지만 바로 다음에 배울 상관계수를 구할 때 사용될 수 있어요."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 상관계수(Correlation Coefficient)"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "공분산과 마찬가지로 고등학교 수학 교육과정에서는 다루지 않으나, 인공지능 기초 교과서에서는 해석 방법에 대한 설명이 일부 등장해요.",
+        "상관계수는 ⁍와 ⁍ 사이에 선형관계가 있는지 확인하기 위해서 산출해요. 그래서 상관계수는 산출 방법 뿐만 아니라 해석 방법도 중요해요.",
+        "상관계수는  ⁍또는 ⁍등으로 표기하며, 다음과 같이 구할 수 있어요."
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "말로 표현하자면 ⁍와 ⁍의 공분산을, ⁍의 표준편차와 ⁍의 표준편차의 곱으로 나눠서 구할 수 있다는 거예요.",
+        "해석 방법은 다음과 같아요."
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "상관계수의 절댓값은 1 이하예요(즉, ⁍). ",
+        "상관계수가 양수면 ⁍와 ⁍사이에 양의 상관관계(⁍가 증가할 때 ⁍도 증가)가, 음수면 음의 상관관계(⁍가 증가할 때 ⁍는 감소)가 있는 거예요.",
+        "상관계수가 0에 가까우면 ⁍와 ⁍사이에 선형 관계가 없어요. ",
+        "상관계수의 절댓값이 1에 가까우면 ⁍와 ⁍사이에 선형 관계가 있어요.",
+        "절댓값이 크면 클수록 선형 관계가 강하고, 절댓값이 작을수록 선형 관계가 없어요."
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "그러니까 상관계수를 산출했을 때 어느 정도 관계가 있다는 사실이 확인되어야 선형회귀분석에 의미가 있겠죠? 선형도 아닌 데이터에 선을 그어 놓고, 선으로 예측하려 해봤자 쓸모가 없을 테니까요.",
+        "단, ‘어느 정도면 상관관계가 있다고 이야기하느냐’는 학계마다 상황이 달라요. 순수학문이냐 응용학문이냐, 자연과학계열이냐 사회과학계열이냐에 따라 기준선이 제각각 달라요. 사회과학일수록 그리고 응용학문일수록 절대값이 더 낮은 상관계수에도 ‘상관관계가 있다’고 이야기하는데, 이것은 학문 자체의 특성상 그럴 수밖에 없는 부분이 있어요."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ ‘데이터가 어느 수준으로 얼마나 흩어져 있을 때 상관계수가 몇이나 나올까?’에 대한 감을 잡을 수 있도록 예시 데이터와 산점도를 준비했어요."
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F8b1c790b-3a13-4486-9199-5327c8131232%2F463de9c5-c99e-4cfa-a5cd-8fae80e6cb2f%2FUntitled.png?table=block&id=6043cd70-e327-4511-a3bf-5c43dd756b44&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F8b1c790b-3a13-4486-9199-5327c8131232%2F5a218c56-eb42-4ef2-adc8-4d02c8fe8019%2FUntitled.png?table=block&id=e0626602-7b6b-49fb-8ecc-90bc733bce45&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F8b1c790b-3a13-4486-9199-5327c8131232%2F2f99f6d0-e3ca-45a8-9c4b-5e3dd35e4a21%2FUntitled.png?table=block&id=8a9ca4d2-b8f7-41dd-acc6-ad17d0f8bd47&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F8b1c790b-3a13-4486-9199-5327c8131232%2F41731b91-2446-451a-95a0-4197627d98b0%2FUntitled.png?table=block&id=9599cf07-262a-4e60-b4ae-a230a4c48813&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F8b1c790b-3a13-4486-9199-5327c8131232%2F41f1e173-beec-484d-8913-2c1b35a3ae90%2FUntitled.png?table=block&id=c4ebe772-256d-4f3d-bbd2-4e8253e8b225&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F8b1c790b-3a13-4486-9199-5327c8131232%2F4d02efba-469e-42a8-be53-30ac0bf48916%2FUntitled.png?table=block&id=49d0e346-9ace-4890-9827-704bbd702035&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "상관계수가 0에 가깝다고 데이터에 패턴이 없는 것은 아니에요. 예컨대 원점 근처에 점이 집중적으로 찍혀 있을 경우에도 상관계수는 0에 가깝게 나오니까요. 따라서 데이터의 패턴을 확인할 때에는 시각화가 필수적이에요. 앤스컴 콰르텟(Anscombe's quartet)을 확인해보면 시각화의 중요성을 알 수 있어요.",
+        "또한, 상관관계가 있더라도 그것이 인과관계를 의미하지는 않아요. 예컨대 아이스크림 판매량과 익사자의 수는 놀랍게도 양의 선형관계를 보이는데요, 기온이 올라가면 아이스크림도 많이 사먹고 물놀이도 많이 가기 때문이에요. 그러니까 아이스크림 판매량과 익사자 수 사이에 양의 상관관계가 발견되었다고 해서, 아이스크림 판매로 인해 익사자가 늘어났다고 판단하면 안 되겠죠? 상관관계는 인과관계가 아니니까요."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 짧은 개념들의 코드 구현"
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "X = [0, 2, 4, 6]\nY = [1, 3, 2, 4]\nn = len(X)  # 또는 len(Y)\n\n# 한 리스트에 담긴 숫자들의 평균을 반환하는 함수\ndef mean(alist):\n    return sum(alist)/len(alist)\n\n# 두 리스트의 대응하는 숫자들을 곱한 뒤, 그것들의 평균을 반환하는 함수\ndef mean_of_elementwise_multiplication(alist, blist):\n    s = 0\n    for i in range(len(alist)):\n        s = s + alist[i]*blist[i]\n    return s / len(alist)\n\n# 평균\nmean_X = mean(X)\nmean_Y = mean(Y)\n\n# 편차\ndeviation_X = []\ndeviation_Y = []\nfor i in range(n):\n    deviation_X.append(X[i]-mean_X)\n    deviation_Y.append(Y[i]-mean_Y)\n\n# 분산: 편차 제곱의 평균\nVar_X = mean_of_elementwise_multiplication(deviation_X, deviation_X)\nVar_Y = mean_of_elementwise_multiplication(deviation_Y, deviation_Y)\n\n# 표준편차: 분산의 양의 제곱근\nsd_X = Var_X**0.5\nsd_Y = Var_Y**0.5\n\n# 공분산: 편차간 곱의 평균\nCov_XY = mean_of_elementwise_multiplication(deviation_X, deviation_Y)\n\n# 상관계수\nCorr_XY = Cov_XY/(sd_X*sd_Y)\n\n# 출력\nprint(f'X의 편차: {deviation_X}')     # [-3.0, -1.0, 1.0, 3.0]\nprint(f'Y의 편차: {deviation_Y}')     # [-1.5, 0.5, -0.5, 1.5]\nprint(f'X의 분산: {Var_X}')           # 5.0\nprint(f'Y의 분산: {Var_Y}')           # 1.25\nprint(f'X의 표준편차: {sd_X}')         # 2.2360...\nprint(f'Y의 표준편차: {sd_Y}')         # 1.1180...\nprint(f'X와 Y의 공분산: {Cov_XY}')     # 2.0\nprint(f'X와 Y의 상관계수: {Corr_XY}')  # 0.7999..."
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 경사하강법(Gradient Descent)"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "경사하강법이란 기울기가 더 낮은 점으로 조금씩 이동하기를 반복해 극소점을 구해내는 방법이에요.",
+        "예를 들어 ⁍에 대해 생각해볼게요. 우리는 이 함수를 미분하여 ⁍가 0이 되는 지점을 방정식 풀이로 찾음으로써 극소점이 ⁍에 있다는 사실을 쉽게 알아낼 수 있어요. ",
+        "같은 문제를 경사하강법으로 풀어볼까요? 임의의 ⁍을 설정하고, 다음 점화식을 이용해 값을 충분히 많이 갱신하면 극소점의 ⁍좌표에 근사할 수 있어요."
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "⁍은 학습률(Learning Rate)의 머리글자예요. 하지만 위 식을 이해하기 위해, 우선은 맨 뒤에 곱한 ⁍이 없다고 생각해주세요."
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "그렇다면 위 식은, 현재의 ⁍ 좌표인 ⁍를 기준으로 다음 ⁍좌표인 ⁍을 향해 나아가려면 현재 지점에서의 접선의 기울기인 ⁍를 빼야 한다고 설명하는 셈이에요. 이것은 이동 방향 측면에서도 옳은 선택이고, 이동 거리 측면에서도 옳은 선택이에요. 왜일까요?"
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "방향: 접선의 기울기가 양수일 때는 극소점이 ⁍축을 기준으로 음의 방향에 있고, 접선의 기울기가 음수일 때는 극소점이 ⁍축을 기준으로 양의 방향에 있기 때문이에요.",
+        "이동 거리: 극소점에서 현재 위치까지의 ⁍축 거리가 멀다면 접점의 기울기가 더욱 가파르고, 거리가 가깝다면 접점의 기울기가 더욱 완만해요. 즉, 위치를 갱신하면서 현재 위치의 ⁍좌표가 극소점의 ⁍좌표와 점차 가까워질수록 접선의 기울기가 지니는 절댓값의 크기도 점차 작아지기 때문에, 이동 거리도 자연스럽게 줄어들 거예요."
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "즉, 현재 지점에서의 접선의 기울기를 뺀다는 선택은 여러 모로 현명한 결정이에요. ",
+        "하지만 기울기를 그냥 빼면 값이 너무 커요. 그리고 과하게 큰 값을 빼면 극소점으로부터의 ⁍축 거리가 가까워지는 것이 아니라, 오히려 멀어질 수도 있죠. 이런 문제를 해결하기 위해 0과 1사이의 값(대개 0.05, 0.03, 0.0001 등의 값)을 지니는 학습률(Learning Rate)을 기울기에 곱하는 거예요. 즉 학습률은 변화량 축소를 위해 곱하는 값이고, 우리는 학습률의 크기를 조절해서 변화 정도를 조절할 수 있어요.",
+        "만약 학습률이 과하게 크다면 학습률을 곱하는 보람도 없이 ⁍가 발산할 거예요. 반면에 학습률이 너무 작으면 극소점을 찾는 데 너무 오랜 시간이 걸리거나 ⁍가 거의 멈춘 것처럼 보일 거예요. 따라서 적당한 학습률을 사용하는 것이 중요해요. 하지만 적당한 학습률을 설정하는 문제는 또 다른 하나의 새로운 주제이므로 여기서 다루지는 않을게요. 당장은 발산하지 않는 수준에서 임의의 값을 찾아 사용하는 정도로 충분해요.",
+        "진짜 중요한 것은, ‘학습률은 사람이 직접 지정하는 것이다’라는 사실을 아는 거예요. 우리가 구하려는 ⁍와 ⁍처럼 알고리즘이 자동으로 구해줄 값은 파라미터(parameter)라고 하고, 학습률처럼 사람이 직접 지정해줘야 하는 값은 하이퍼파라미터(hyperparameter)라고 해요. ",
+        "기계학습에서의 파라미터는 함수를 정의할 때 등장하는 파라미터(매개변수)와 글자만 같고 완전히 다른 존재이니 헷갈리지 않도록 주의하세요."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "다음은 ⁍의 극소점의 ⁍좌표를 경사하강법으로 찾는 코드예요."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "# 반복횟수와 학습률\ncount = 10000\nlr = 0.05\n\n# 함수의 코드 표현\ndef f(x):\n    return x*x-4*x+1\n\n# 수치미분의 코드 표현\ndef dy_dx(x):\n    h = 0.00000001\n    n = f(x+h)-f(x-h)  # 분자(numerator)의 머리글자\n    d = 2*h            # 분모(denominator)의 머리글자\n    return n/d\n\n# 임의의 점에서 출발\nx_t = 0\n\n# 반복하며 x_t를 갱신\nfor i in range(count):\n    x_t = x_t - dy_dx(x_t)*lr\n\n# 결과 출력\nprint(f'극소점에서의 x좌표:{x_t}')      # 1.9999999953390635"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "위 코드의 작동 과정을 그림으로 나타내면 다음과 같아요."
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F8b1c790b-3a13-4486-9199-5327c8131232%2F75611b01-0615-4833-9660-b48f71dccf62%2FUntitled.png?table=block&id=0123553d-77eb-4528-ae85-e209c947ffca&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "만약 lr을 크게 잡는다면 극소점의 좌우로 흔들리면서 수렴할 수도 있어요(그래도 괜찮아요)."
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F8b1c790b-3a13-4486-9199-5327c8131232%2Fe7a4846a-4d64-4f98-a8ce-67e406520403%2FUntitled.png?table=block&id=4f5ede72-5351-4bea-af64-4d0f786c3c64&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "저도 해볼래요!"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "다음 물음에 답해보세요.",
+        "⁍을 ⁍와 ⁍에 대해 각각 미분해보세요.",
+        "⁍의 극소점의 ⁍ 좌표를 경사하강법으로 찾아보세요."
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "paragraph",
+      "text": "현재 위치: ‣ "
+    }
+  ],
+  "fetchedAt": "2026-04-25T10:38:01.519Z"
+}

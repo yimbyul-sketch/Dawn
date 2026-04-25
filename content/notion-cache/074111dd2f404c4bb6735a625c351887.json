@@ -1,0 +1,167 @@
+{
+  "id": "074111dd2f404c4bb6735a625c351887",
+  "title": "[ABPYCL10] 불변과 가변",
+  "blocks": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어디쯤 왔어요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "input, process, output을 구현하기 위한 다양한 함수, 연산자, 클래스를 배웠어요.",
+        "함수나 클래스를 직접 만드는 방법도 배웠어요.",
+        "이 문서에서는 특성에 따라 클래스를 두 가지 분류로 나눠볼 거예요.",
+        "그 특성이란 바뀔 수 없느냐(immutable, 불변) 또는 바뀔 수 있느냐(mutable, 가변)예요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "배우면 뭐가 좋아요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "(다른 언어보다는 훨씬 덜 그렇지만) Python은 언뜻 보기에 이해하기 어려운 실행 결과를 보여줄 때가 있어요. 다음 예시 코드를 통해 체험해볼까요?",
+        "코드 1: b를 a에 일치시키고 b만 가공한 후 출력했더니, a와 b가 다르게 나와요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "a = 1\nb = a\nb += 1    # 복합할당연산자(+=)로 간단하게 표현한 b = b + 1\nprint(a)  # 1\nprint(b)  # 2"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "코드2: b를 a에 일치시키고 b만 가공한 후 출력했더니, a와 b가 똑같이 나와요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "a = [1]\nb = a\nb += [2]  # 복합할당연산자(+=)를 이용한 요소 추가. append와 효과 동일.\nprint(a)  # [1, 2]\nprint(b)  # [1, 2]"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "왜 이런 걸까요? 버그냐고요? 아니에요. 이번 문서를 통해 이 현상을 확실히 이해하게 될 거예요.",
+        "복합할당연산자를 이용해야만 위와 같은 결과를 얻을 수 있어요. "
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어떻게 해요? 예를 들면요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "클래스에는 여러 종류가 있죠? 이것들을 두 그룹으로 나눌 수 있어요. 한 그룹은 불변(immutable) 클래스고, 다른 그룹은 가변(mutable) 클래스라고 해요."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 불변 클래스란? 일단 한 번 인스턴스를 생성하고 나면 값을 조금도 바꿀 수 없는 인스턴스를 말해요. int, float, str, tuple, bool 등이 있어요."
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "튜플을 예로 들어볼까요? Shell에서 다음과 같이 테스트해보면, 요소 변경이 안 된다는 사실을 확인할 수 있어요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": ">>> atuple = ('a', 'b', 'c')\n>>> atuple[1] = 'x'\nTraceback (most recent call last):\n  File \"<pyshell#2>\", line 1, in <module>\n    atuple[1] = 'x'\nTypeError: 'tuple' object does not support item assignment"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 가변 클래스란? 인스턴스를 생성한 뒤에도 값의 일부 또는 전부를 바꿀 수 있는 인스턴스를 말해요. list, dict 등이 있어요."
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "리스트를 예로 들어볼까요? Shell에서 다음과 같이 테스트해보면, 요소 변경이 된다는 사실을 확인할 수 있어요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": ">>> alist = ['a', 'b', 'c']\n>>> alist[1] = 'x'\n>>> print(alist)\n['a', 'x', 'c']"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "그러니 불변 클래스와 가변 클래스를 일일이 외우려고 억지로 노력하지는 마세요. 위에서 제가 보인 것과 같이, Shell에서 일부 요소 변경을 시도해보면 가변인지 불변인지 간단히 알 수 있거든요.",
+        "하지만 정수(int), 실수(float), 문자열(str), 진위(bool) 같은 클래스는 위와 같은 방법으로 알아볼 수가 없죠? 인덱스가 없으니까요. 이럴 때 사용할 수 있는 내장 함수가 바로 id()예요.",
+        "내장 함수 id()는 인스턴스의 고유 번호를 출력해요. ",
+        "고유번호는 절대로 겹치지 않아요. ",
+        "다른 인스턴스라면 다른 숫자가 나오고, 같은 인스턴스라면 반드시 같은 숫자가 나와요.",
+        "같은 숫자가 나왔다면 같은 인스턴스고, 다른 숫자가 나왔다면 다른 인스턴스예요.",
+        "Shell에서 간단히 테스트해볼까요?"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": ">>> a = 1\n>>> id(a)\n1840124461296\n>>> a += 1\n>>> id(a)\n1840124461328  ← 불변형이라 인스턴스를 새로 만들었고, 그래서 id도 바뀜\n>>>\n>>>\n>>> b = [1]\n>>> id(b)\n1840161387840\n>>> b += [2]\n>>> id(b)\n1840161387840  ← 가변형이라 인스턴스의 내용물만 바꿈"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "저도 해볼래요!"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "문제1: 다음 코드의 실행 결과, 화면에 출력되는 값은 무엇일까요? 코드 실행 전 스스로 설명해보고, 코드를 실행해서 그 결과를 확인해보세요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "def f(k1, k2):\n    k1 += 'java'    # 복합할당연산자를 이용한 문자열 연장\n    k2 += ['java']  # 복합할당연산자를 이용한 리스트 요소 추가\nx1 = 'python'\nx2 = ['python']\nf(x1, x2)\nprint(x1)\nprint(x2)"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "문제2: 다음 코드의 실행 결과, 화면에 출력되는 값은 무엇일까요? 코드 실행 전 스스로 설명해보고, 코드를 실행해서 그 결과를 확인해보세요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "def f(k1, k2):\n    k1 += 'java'    # 복합할당연산자를 이용한 문자열 연장\n    k2 += ['java']  # 복합할당연산자를 이용한 리스트 요소 추가\n    return k1, k2\nx1 = 'python'\nx2 = ['python']\nx1, x2 = f(x1, x2)\nprint(x1)\nprint(x2)"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "문제3: 다음 코드의 실행 결과, 화면에 출력되는 값은 무엇일까요? 코드 실행 전 스스로 설명해보고, 코드를 실행해서 그 결과를 확인해보세요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "def f(k1, k2):\n    k1 += 'java'    # 복합할당연산자를 이용한 문자열 연장\n    k2 += ['java']  # 복합할당연산자를 이용한 리스트 요소 추가\n    return k1\nx1 = 'python'\nx2 = ['python']\nx1 = f(x1, x2)\nprint(x1)\nprint(x2)"
+    },
+    {
+      "type": "paragraph",
+      "text": "현재 위치: ‣ "
+    }
+  ],
+  "fetchedAt": "2026-04-25T10:37:17.684Z"
+}

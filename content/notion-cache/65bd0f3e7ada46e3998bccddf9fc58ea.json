@@ -1,0 +1,112 @@
+{
+  "id": "65bd0f3e7ada46e3998bccddf9fc58ea",
+  "title": "[ABPYCL11] escape character, f-string",
+  "blocks": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어디쯤 왔어요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "int, float, str, bool 등 기본 클래스의 종류와, 그 클래스의 인스턴스를 만드는 방법에 대해 배웠어요.",
+        "할당연산자를 이용해 변수에 인스턴스를 할당하는 방법도 배웠어요.",
+        "이 문서에서는 문자열 안에서 줄바꿈을 표현하는 방법과 변수를 문자열에 자연스럽게 녹이는 방법을 알아볼 거예요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "배우면 뭐가 좋아요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "줄바꿈(엔터 키)과 변수 이름을 문자열로 표현할 때 편해요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어떻게 해요? 예를 들면요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "문자열 안에서, 줄바꿈은 이렇게 표기할 수 있어요: \\n",
+        "\\키는 보통 백스페이스(지울 때 사용하는) 키 왼쪽이나 바로 아래쪽에 있어요.",
+        "만약 backslash(\\)가 아니라 KRW(원 표시)가 나오더라도 똑같은 문자니까 괜찮아요(단순한 폰트 차이예요).",
+        "Shell에 테스트해볼게요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": ">>> print('a\\n\\nb')    # 줄바꿈 문자가 연달아 두 개 사용됨\na\n\nb"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "문자열 안에서 변수를 자연스럽게 표현하려면 이렇게 해요.",
+        "여는 따옴표 바로 앞에 f를 붙여요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": ">>> f\"이렇게요\""
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "그리고 문자열 안에서 변수(또는, 계산되어 표기되길 원하는, 변수를 포함하는 간단한 연산)는 중괄호{}를 이용해서 감싸요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": ">>> f\"x의 값은 {x}입니다.\""
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Shell에 테스트해볼게요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": ">>> a = 1\n>>> b = 2\n>>> print(f'a는 {a}고, b는 {b}다.\\n그리고 a+b={a+b}다.')\na는 1고, b는 2다.\n그리고 a+b=3다."
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "저도 해볼래요!"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "다음과 같이 사용자로부터 두 숫자 a와 b를 입력받은 후, 사칙연산 계산 결과를 출력해주는 프로그램을 만들어보세요.",
+        "print를 네 번 쓰든, 따옴표 세 개(’’’)로 감싸서 여러 줄 문자열을 사용하든, 줄바꿈 문자(\\n)를 써서 네 줄을 표현하든, 자유롭게 해 보세요!"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "a: 1\nb: 2\na + b = 3\na - b = -1\na * b = 2\na / b = 0.5"
+    },
+    {
+      "type": "paragraph",
+      "text": "현재 위치: ‣ "
+    }
+  ],
+  "fetchedAt": "2026-04-25T10:37:19.092Z"
+}

@@ -1,0 +1,463 @@
+{
+  "id": "f478e1ffaaac4bb2b05837840b85540c",
+  "title": "[ABPYCL05] 리스트·튜플·인덱스",
+  "blocks": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어디쯤 왔어요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "기본 IPO 구조를 배웠어요.",
+        "I에 해당하는 input() 함수",
+        "P에 해당하는 연산자와 내장함수 및 사용자 정의 함수",
+        "O에 해당하는 print() 함수",
+        "그리고 IPO의 대상인 데이터를 표현할 수 있는 각종 클래스를 배웠죠.",
+        "가장 최근에는 내가 원하는 형태로 클래스를 새로 정의하는 방법까지 배웠어요.",
+        "이 문서에서는 내장 클래스를 두 가지 더 배울 거예요. 바로 리스트(list)와 튜플(tuple)이에요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "배우면 뭐가 좋아요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "지금까지 배운 것들만으로는 빅데이터를 다룰 수 없어요. 데이터 십만 개를 다루기 위해서 변수를 십만 개 만들고, 그 변수들을 통제하는 것은 바보 짓일 뿐더러 불가능에 가깝거든요.",
+        "빅데이터는 말 그대로 대량의 데이터를 말해요.",
+        "빅데이터를 다룬다 함은, 빅데이터에서 원하는 정보를 찾고, 추가하고, 수정하고, 삭제하는 것을 말해요.",
+        "이 문서에서 리스트와 튜플을 공부하고 나면 빅데이터를 다룰 수 있는 능력의 절반을 얻어요.",
+        "큰 데이터를 다루려면 두 가지를 알아야 하는데, 하나는 큰 데이터가 담길 그릇, 즉 특별한 클래스예요.",
+        "이 문서에서 배우게 될 거예요.",
+        "다른 하나는 대량의 데이터에 반복적인 작업을 명령할 수 있는 방법, 즉 반복문이에요.",
+        "반복문은 나중에 다른 문서에서 설명할게요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어떻게 해요? 예를 들면요?"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 리스트 새로 만들기"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "여러 인스턴스를 담을 수 있는 특별한 클래스인 리스트는 다음과 같이 대괄호로 감싸서 표현해요. 정수(int)도, 부동소수점수(float)도, 문자열(str)도, 진위(bool)도, 심지어 리스트(list)도 리스트의 요소가 될 수 있어요!"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "[요소1, 요소2, 요소3, ..., 요소n]"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "리스트는 다음과 같이 간편하게 생성할 수 있어요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "# 빈 리스트 생성하기\n변수 = [] # 또는 변수 = list()\n\n# 요소를 직접 담아서 생성하기\nalist = [1, 2, 3]\nblist = ['a', 'b', 'c']\nclist = [1, 'a', 3.7, True, False, [1, 2, 3]] # 아무거나 담기 가능"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 리스트에 연산자 적용하기"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "리스트와 리스트 사이에 덧셈 연산자를 이용하면 다음과 같이 리스트를 이어 붙일 수 있어요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": ">>> [1, 2]+[3, 4]\n[1, 2, 3, 4]"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "리스트에 정수를 곱하면 다음과 같이 요소가 반복되는 리스트를 얻을 수 있어요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": ">>> [1, 2]*3\n[1, 2, 1, 2, 1, 2]"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "다음과 같이 멤버십 연산자도 사용할 수 있어요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": ">>> m1 = 'e' in ['h', 'e', 'l', 'l', 'o']\n>>> m2 = ['e'] in ['h', 'e', 'l', 'l', 'o']\n>>> m1\nTrue\n>>> m2\nFalse"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 인덱스를 활용해 리스트의 개별 요소에 개별적으로 접근하거나 변경하기"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "리스트를 통째로 다루는 방법은 다른 클래스의 인스턴스를 다룰 때와 다르지 않아요. 예를 들면, 다음과 같이 리스트 전체를 출력할 수 있어요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": ">>> dlist = ['h', 'i']\n>>> dlist\n['h', 'i']"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "하지만 리스트를 다루는 특별한 방법이 하나 더 있는데요, 그건 바로 인덱스(index)를 이용하는 거예요.",
+        "인덱스란 요소 하나 하나에 자동으로 부여되는 순서 번호를 말해요.",
+        "인덱스는 대괄호로 감싸서 표현해요.",
+        "다음과 같은 리스트가 있다고 가정해볼게요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "greet = ['h','e','l','l','o']"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "위 리스트의 요소 하나하나에는 다음과 같이 인덱스가 붙어요."
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "따라서 다음과 같이 일부 요소만 접근해서 사용할 수 있어요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "print(greet[0])   # h\nprint(greet[3])   # l\nprint(greet[-3])  # l"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "요소를 꼭 한 개씩만 사용해야 하는 건 아니에요. 두 인덱스와 콜론을 이용하면 다음과 같이 슬라이싱(slicing, 구간 잘라내기)을 할 수도 있어요. ",
+        "범위는 첫 숫자 이상, 끝 숫자 미만이에요. 헷갈리지 않도록 주의하세요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "print(greet[1:3]) # ['e', 'l']이 출력됨. 인덱스 1은 포함, 3은 불포함\nprint(greet[0:3]) # ['h', 'e', 'l']\nprint(greet[2:5]) # ['l', 'l', 'o']"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "슬라이싱을 할 때 첫 인덱스와 마지막 인덱스는 생략할 수 있어요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "print(greet[0:3]) # ['h', 'e', 'l']\nprint(greet[:3])  # ['h', 'e', 'l']\nprint(greet[2:5]) # ['l', 'l', 'o']\nprint(greet[2:])  # ['l', 'l', 'o']\nprint(greet[:])   # ['h', 'e', 'l', 'l', 'o']"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "다음과 같이 슬라이싱에 콜론과 숫자 한 개를 더하면, 구간을 건너뛰어서 잘라낼 수도 있어요(즉, [시작점:끝점:공차] 단, 끝점은 미포함)."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "print(greet[0:5:2])  # ['h', 'l', 'o']\nprint(greet[::2])    # ['h', 'l', 'o'] (첫인덱스 및 끝인덱스 생략)\nprint(greet[0:2:3])  # ['h']\nprint(greet[1:5:3])  # ['e', 'o']\nprint(greet[::-1])   # ['o', 'l', 'l', 'e', 'h']"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "출력 함수가 아니라 다른 함수의 인수로 전달하거나 변수에 할당할 수도 있는 건 당연하겠죠?",
+        "리스트를 슬라이싱한 결과는 리스트예요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "a = greet[0:5:2]  # a는 ['h', 'l', 'o']\nb = greet[2:]     # b는 ['l', 'l', 'o']\nprint(a+b)        # ['h', 'l', 'o', 'l', 'l', 'o']"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "인덱스와 할당연산자를 이용하면 리스트 내 요소 중 일부만을 바꿀 수도 있어요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "name = ['s', 'a', 'm']\nname[0] = 'j'\nprint(name)   # ['j', 'a', 'm']"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 멤버 함수를 이용해 리스트에 개별 요소를 추가하거나 삭제하기"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "리스트의 멤버 함수를 이용해서 요소를 추가하거나 삭제할 수 있어요.",
+        "요소를 추가할 때는 append()나 insert()를 사용할 수 있어요.",
+        "둘 다 파라미터는 있고 리턴은 없는 함수예요.",
+        "insert()는 원하는 자리에 요소를 삽입할 때 사용해요.",
+        "append()는 리스트의 맨 끝에 요소를 추가할 때 사용해요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "a = ['a', 'c', 'd']\na.insert(1, 'b')    # 인덱스 [1]에 해당하는 자리에 'b' 삽입\nprint(a)            # ['a', 'b', 'c', 'd']\na.append('e')\nprint(a)            # ['a', 'b', 'c', 'd', 'e']"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "append() 대신 리스트 이어붙이기(덧셈 연산자)로 요소를 추가하는 것도 가능해요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "a = a + ['f']"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "요소를 삭제할 때는 remove() 또는 pop()을 이용할 수 있어요.",
+        "remove()는 지우려는 요소를 인수로 전달해야돼요. 파라미터는 있고 리턴은 없는 함수예요.",
+        "pop()은 원래 삭제를 위한 함수가 아니라, 특정 인덱스 위치에 있는 요소를 ‘뽑아내는’ 함수예요. 그래서 파라미터도 있고 리턴도 있어요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "secret = ['c', 'o', 'd', 'e']\nsecret.remove('d')       # 리스트에서 d를 삭제\nprint(secret)            # ['c', 'o', 'e']\npopped = secret.pop(2)   # 2번째 요소를 뽑아내서 반환\nprint(popped)            # e\nprint(secret)            # ['c', 'o'] 결과적으로 요소 'e'가 삭제됨"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 리스트와 꼭 닮은 튜플(tuple)"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "튜플은 왜 알아야 할까요?",
+        "여기 저기서 자주 사용되는데 모르면 답답하거든요.",
+        "리스트보다 ‘가벼워서’ 생각보다 자주 사용돼요.",
+        "지금까지 리스트에 대해 배웠는데, 아주 간단한 두 가지 사실만 더 알면 튜플이라는 클래스도 이용할 수 있어요.",
+        "첫 번째, 튜플은 대괄호가 아니라 소괄호로 감싸서 표현해요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "atuple = (1, 3, 5, 7)\nprint(atuple[2])  # 5\nprint(atuple[1:3]) # (3, 5)\nprint((1, 2)+(3, 4)) # (1, 2, 3, 4)"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "두 번째, 튜플 인스턴스는 일단 만들고 나면 수정이 불가능해요. 사실 이건 정수, 실수, 문자열도 마찬가지예요. 오히려 요소 중 일부를 수정할 수 있었던 리스트가 특별한 거예요.",
+        "요소 수정이 불가능하니, 요소 수정과 관련된 멤버 함수가 존재하지 않아요.",
+        "요소 일부 수정이 안 된다는 사실은 Shell에서 간단히 확인해볼 수 있어요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": ">>> a = (1, 5, 9)\n>>> a[1] = 2\nTraceback (most recent call last):\n  File \"<pyshell#1>\", line 1, in <module>\n    a[1] = 2\nTypeError: 'tuple' object does not support item assignment"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "튜플은 여러 가지 데이터를 한꺼번에 담아야 하는데 굳이 수정은 할 필요가 없을 때 사용돼요. 다음 코드를 볼까요?"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "def f(x):\n    return x+1, x+2\n\na, b = f(1)\nprint(a)    # 2\nprint(b)    # 3"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "원칙적으로, 리턴할 수 있는 값은 한 개 뿐이에요.",
+        "그런데 위 코드에서는 값을 두 개나 리턴하고 있죠? 알게 모르게 x+1과 x+2를 튜플로 묶어서 한 개로 전달한 거예요.",
+        "다음과 같이 코드를 수정해서 실행해보면 확인할 수 있어요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "def f(x):\n    return x+1, x+2\n\nr = f(1)\nprint(r)    # (2, 3)\nprint(type(r))    # <class 'tuple'>"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 사실은 문자열에도 인덱스를 사용할 수 있었다?!"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "네, 맞아요. 놀랍게도 문자열 또한 인덱스를 사용할 수 있고, 그래서 슬라이싱도 가능해요.",
+        "각 글자 하나 하나가 문자열의 요소예요. 코드를 통해 확인해볼까요?"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "astr = 'hello'\nprint(astr[1])  # e\na = astr[1:3]   # 'el' 문자열을 슬라이싱하면 문자열\nb = astr[3:]    # 'lo' a와 b에는 각각 astr과 분리된 별도의 인스턴스가 할당됨 \nprint(a+b)      # ello"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 이쯤 되어 공개하는 유용한 내장 함수와 멤버 함수"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "아래에서 소개하는 내장 함수나 멤버 함수 외에도 유용한 기능들이 굉장히 많으니, ‘이런 기능도 있지 않을까?’ 싶을 때는 반드시 검색해보세요. Python은 ‘혹시 있을까?’ 싶은 기능을 대부분 가지고 있어요."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 내장 함수 sum()"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "리스트 또는 튜플을 전달하면, 요소로 주어진 숫자들의 총합을 반환해줘요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "s = sum([1, 2, 3])\nprint(s)  # 6"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 내장 함수 len()"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "문자열 뿐만 아니라 리스트나 튜플도 인수로 전달할 수 있어요. 이 때에는 글자수가 아니라 요소의 개수를 반환해요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "n = [1, 2, 'abcd', 3.3]\nl = len(n)\nprint(l)   # 4"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 리스트의 멤버 함수 sort()"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "리스트의 구성 요소를 정렬해요. 리스트는 요소의 변경이 가능하고, sort는 멤버 함수이기 때문에 아무 것도 반환하지 않아요.",
+        "한글이나 알파벳도 가나다 또는 abc 순으로 정렬해줘요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "alist = ['a', '후', 'f', '가', '이']\nalist.sort()\nprint(alist)   # ['a', 'f', '가', '이', '후']\nalist.sort(reverse = True)  # 내림차순 정렬\nprint(alist)   # ['후', '이', '가', 'f', 'a']"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 내장 함수 sorted()"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "리스트의 멤버 함수인 sort와 거의 비슷한데 내장 함수라는 점이 달라요.",
+        "리스트 또는 튜플, 문자열 같이 구성요소의 순서가 있는 인스턴스를 인수로 받고, 정렬된 리스트를 반환해요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "alist = ['a', '후', 'f', '가', '이']\nblist = sorted(alist)\nprint(alist)   # ['a', '후', 'f', '가', '이']\nprint(blist)   # ['a', 'f', '가', '이', '후']\nblist = sorted(alist, reverse = True)  # 내림차순 정렬\nprint(blist)   # ['후', '이', '가', 'f', 'a']"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 문자열의 멤버 함수 split()"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "문자열에 포함된 특정 문자를 기준으로 문자열을 쪼개서 리스트 형태로 반환해줘요.",
+        "쉼표 등 구분 문자를 사용해서 사용자로부터 여러 개의 값을 입력받을 때 사용하면 편해요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "astr = 'a,b,c,d,e'\nbstr = astr.split(',')\nprint(astr)  # a,b,c,d,e\nprint(bstr)  # ['a', 'b', 'c', 'd', 'e']"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "저도 해볼래요!"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "사용자로부터 쉼표로 구분된 이름들을 공백 없이 입력받아서 가나다 순으로 정렬한 후 화면에 출력해보세요.",
+        "사용자로부터 다섯 개의 값을 입력받아 한 리스트에 포함하고, 숫자들의 합과 평균을 구해서 화면에 출력해보세요."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "현재 위치: ‣"
+    }
+  ],
+  "fetchedAt": "2026-04-25T10:37:13.196Z"
+}

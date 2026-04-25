@@ -1,0 +1,127 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: 250 250 250;
+    --bg-elev: 255 255 255;
+    --fg: 15 23 42;
+    --fg-muted: 100 116 139;
+    --border: 226 232 240;
+    --accent: 37 99 235;
+    --accent-soft: 219 234 254;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: 15 23 42;
+      --bg-elev: 30 41 59;
+      --fg: 241 245 249;
+      --fg-muted: 148 163 184;
+      --border: 51 65 85;
+      --accent: 96 165 250;
+      --accent-soft: 30 58 138;
+    }
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    background: rgb(var(--bg));
+    color: rgb(var(--fg));
+    font-size: 17px;
+    line-height: 1.7;
+    overscroll-behavior-y: none;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+
+  @media (min-width: 1024px) {
+    body { font-size: 16px; }
+  }
+
+  /* iPad Safari 100vh bug — prefer dvh */
+  .min-h-screen-dvh { min-height: 100dvh; }
+
+  /* 코드 블록 가독성 */
+  pre, code {
+    @apply font-mono;
+    font-feature-settings: "calt" 1;
+  }
+
+  pre {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* 본문 한국어 줄바꿈 */
+  .prose-ko {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  /* 터치 타겟 — Apple HIG 44pt */
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* 제목·작은 인라인 링크는 예외 */
+  h1, h2, h3, h4, .inline-link, .inline-link * {
+    min-height: auto;
+    min-width: auto;
+  }
+
+  /* 시각화 영역에서는 핀치 줌 막기 (그래프 어긋남 방지) */
+  .no-pinch-zoom {
+    touch-action: pan-x pan-y;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 font-medium transition;
+    @apply bg-[rgb(var(--accent))] text-white;
+    @apply active:scale-[0.97];
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 font-medium transition;
+    background: rgb(var(--bg-elev));
+    color: rgb(var(--fg));
+    border: 1px solid rgb(var(--border));
+    @apply active:scale-[0.97];
+  }
+
+  .card {
+    background: rgb(var(--bg-elev));
+    border: 1px solid rgb(var(--border));
+    @apply rounded-2xl;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-medium;
+    background: rgb(var(--accent-soft));
+    color: rgb(var(--accent));
+  }
+
+  .chip-warn {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-medium;
+    background: rgb(254 243 199);
+    color: rgb(146 64 14);
+  }
+  @media (prefers-color-scheme: dark) {
+    .chip-warn {
+      background: rgb(120 53 15 / 0.4);
+      color: rgb(254 215 170);
+    }
+  }
+}

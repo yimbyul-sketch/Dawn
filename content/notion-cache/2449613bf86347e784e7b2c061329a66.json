@@ -1,0 +1,67 @@
+{
+  "id": "2449613bf86347e784e7b2c061329a66",
+  "title": "Python 사용 준비",
+  "blocks": [
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "컴퓨터가 이해해서 실행할 수 있는 건 0과 1로 이루어진 명령밖에 없어요.",
+        "그러니 사람이 쓴 Python 코드를 컴퓨터는 바로 이해하지 못해요.",
+        "따라서 즉시 실행 가능한 코드로 해석해줄 수 있는 번역기가 필요해요.",
+        "번역기에 더해서 코드 편집기도 필요해요. ",
+        "코드를 쓰고, 읽고, 변경하고, 지워야 하니까요.",
+        "그 외에도 프로그래밍에 유용한 기타 도구들이 있으면 좋겠죠?",
+        "이렇게 프로그램 개발을 위해 모아 놓은 번역기, 코드 편집기, 기타 도구를 합쳐서 통합 개발 환경 또는 IDE(Integrated Development Environment)라고 불러요.",
+        "Python을 지원하는 IDE에는 여러 종류가 있어요. 우리는 가장 기본적인 IDE인 IDLE를 사용할 거예요.",
+        "다른 IDE를 설치해서 사용하고 싶다면, Youtube 영상 등 참고할 수 있는 것들이 많으니 검색해서 직접 사용해보세요."
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "IDLE를 설치하고 사용하는 방법은 아래 영상을 참고하세요.",
+        "생활코딩의 영상이에요. 프로그램 개발을 조금 더 깊게 공부하고 싶은 생각이 있다면 생활코딩을 추천해요."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 단, 영상을 보기 전! 주의할 사항이 있어요. 설치 중 등장하는 Add Python 3.x to PATH에 반드시 체크하고 설치해주세요."
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F8abfee44-548e-47e2-b1da-ca6a90caa529%2FUntitled.png?table=block&id=78d36d7a-e0ed-4057-ae5e-2665c6aa123f&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "만약 체크하는 것을 잊었다면 삭제 후 다시 설치해주세요.",
+        "아래 생활코딩 영상에서는 PATH를 설명하고 있지 않은데요. 아무튼 나중에 귀찮은 일을 피하려면 꼭 체크해서 설치해주세요!"
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "설치를 완료했다면 IDLE을 실행해주세요. ",
+        "다음과 같이 ‘IDLE Shell 3.x.x’ 창이 떠야 해요.",
+        "폰트는 [Options]→[Configure IDLE]에서 바꿀 수 있어요."
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc3d6d830-3e6b-4615-b1bd-a76ecbd5a058%2FUntitled.png?table=block&id=506f9f80-831c-4f49-878b-db6392c39cb7&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "현재 위치: ‣ "
+    }
+  ],
+  "fetchedAt": "2026-04-25T10:37:03.778Z"
+}

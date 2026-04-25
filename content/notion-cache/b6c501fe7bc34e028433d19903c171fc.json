@@ -1,0 +1,192 @@
+{
+  "id": "b6c501fe7bc34e028433d19903c171fc",
+  "title": "[ABPYPR00] 산술연산자",
+  "blocks": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어디쯤 왔어요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "기본적인 프로그래밍의 재료인 인스턴스에 대해 배웠죠?",
+        "인스턴스의 상위 분류인 클래스에 대해서도 배웠어요.",
+        "이 문서에서는 인스턴스를 대상으로 다양한 산술 연산을 진행할 거예요.",
+        "산술 연산이란, 우리가 알고 있는 사칙연산 비슷한 것들을 말해요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "배우면 뭐가 좋아요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "덧셈, 뺄셈, 곱셈, 나눗셈, 제곱, 몫만 구하기, 나머지만 구하기 등을 할 수 있어요.",
+        "귀찮고 복잡하고 번거로운 계산을 컴퓨터에게 떠넘길 수 있다는 게 핵심이에요!",
+        "피연산자의 클래스에 따라서 같은 연산자가 다르게 작용할 수 있다는 사실을 알게 돼요.",
+        "피연산자란 연산자의 계산 대상으로 사용되는 값이에요. 예컨대 2+3이란 연산에서 +는 연산자, 2와 3은 피연산자예요.",
+        "덧셈 연산자가 숫자를 대상으로 사용되면 숫자 덧셈이 수행되고, 문자열을 대상으로 사용되면 문자열 이어붙이기가 수행돼요.",
+        "1+2은 3인데 ‘안녕’+’하세요’는 ‘안녕하세요’예요. 같은 연산자임에도 다른 연산이 수행되는 게 느껴지시죠?",
+        "이렇게 ‘다르게’ 연산되는 이유는 그것이 더 유용하기 때문이에요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어떻게 해요? 예를 들면요?"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 정수(int)와 실수(float)의 사칙연산은 다음과 같이 간단히 수행할 수 있어요."
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fb0da69a6-c340-4a7a-9a80-a32c7d3173bc%2FUntitled.png?table=block&id=d442f16c-6836-4c91-8489-53331d0478f2&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F8bf23eca-a452-435a-a2de-8eabd0f2b258%2FUntitled.png?table=block&id=eacf49c0-a8e9-4040-ba84-76e173b1fe3d&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbe0fd8a3-4982-4199-a3b8-ef88c839f97f%2FUntitled.png?table=block&id=f59ae6fe-cfa6-481c-8fc5-12dd3d9f6634&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F714c14e8-48c3-4f92-9c28-aabf2e3d4c59%2FUntitled.png?table=block&id=36b03cec-ea33-4131-a294-1aedfabde539&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F32a6025b-b9ce-4943-8b06-dc4e2df6f0f0%2FUntitled.png?table=block&id=d29cd362-bfbb-4e82-a883-d5c25465ee88&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "덧셈 연산자는 +",
+        "뺄셈 연산자는 -",
+        "곱셈 연산자는 *",
+        "나눗셈 연산자는 /",
+        "제곱은 곱셈 연산자 두 개(**)를 이용해요.",
+        "0.5제곱을 하면 루트를 씌운 값(제곱근)도 구할 수 있겠죠?",
+        "세제곱근도 구할 수 있어요. 예를 들면 세제곱근 2는 2**(1/3)라고 쓰면 되니까요.",
+        "나눗셈의 몫만 구하려면 나눗셈 연산자 두 개(//)를 이용해요.",
+        "나눗셈의 나머지만 구하려면 연산자 %(Modulo)를 이용해요."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 산술연산자 중 일부는 문자열에도 사용할 수 있어요."
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F56cc375c-3995-45d1-b771-ac1f5577b8a9%2FUntitled.png?table=block&id=1f084056-256a-4347-aee9-06f9c7aa701d&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "문자열+문자열: 가능",
+        "문자열과 문자열을 이어붙여요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": ">>> 'a' + 'b'\n'ab'"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "문자열-문자열: 불가능",
+        "TypeError가 발생해요.",
+        "문자열*문자열: 불가능",
+        "문자열/문자열: 불가능",
+        "문자열*정수: 가능",
+        "문자열을 정수 횟수만큼 반복해서 이어붙여요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": ">>> 'a' * 3\n'aaa'"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 피연산자로 사용되는 인스턴스의 클래스에 따라, 연산자의 작동 방식이 달라질 수 있다는 사실을 아는 게 중요해요. 즉, 똑같이 생긴 연산자여도 다른 기능을 수행할 수 있어요!"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "5+5는 10이죠?",
+        "덧셈 연산자가 ‘숫자 덧셈’을 했어요.",
+        "하지만 ‘5’+’5’는 ‘55’예요.",
+        "덧셈 연산자가 문자열 사이에서 사용되면 ‘이어 붙이기’ 기능을 수행해요.",
+        "앞으로도 더 많은 종류의 클래스를 배울 거예요. 어떤 상황에서 어떤 연산은 특별하게 작동하거나 적용할 수 없을 거예요.",
+        "하지만 어떤 것이 가능하고 어떤 것이 불가능한지, 어떤 결과가 나오는지 굳이 외울 필요는 없어요. 그때그때 Shell에 테스트해보면 되니까요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "저도 해볼래요!"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "다음 코드를 Shell에 입력하면 어떤 결과가 나올까요? 코드를 실행하기 전에 띄어쓰기 하나까지 틀리지 않도록 최대한 정확하게 결과를 예측해보고, 코드 입력 결과와 비교해보세요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "'저 사람은 '+'아주'*3+' 재미있어'"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "다음 수학 문제를 Python Shell에서 풀어보세요(2017학년도 3월 고1 전국연합학력평가 수학 영역 1번)."
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Faa7d7c81-87b1-48b3-9cca-60b0e07e1ba9%2FUntitled.png?table=block&id=b71511a9-6c74-42c1-bd4e-ceccd29165a2&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "수학적 통찰 없이 무식하게 계산을 해보세요",
+        "답이 나왔나요? 조금 이상하죠? 아주 작은 오차(0.0000000000000004)가 발생하는 이유는, 컴퓨터가 실수 계산을 할 때 오차가 생길 수밖에 없는 구조를 사용하기 때문이에요."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "현재 위치: ‣ "
+    }
+  ],
+  "fetchedAt": "2026-04-25T10:37:20.767Z"
+}

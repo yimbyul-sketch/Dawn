@@ -1,0 +1,193 @@
+{
+  "id": "ea1bd5dd8a314f92a2ea6372f3718f6f",
+  "title": "[ABPYIO02] 파일 출력",
+  "blocks": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어디쯤 왔어요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "우리는 지금까지 컴퓨터에게 일을 맡기기 위해(=일처리를 자동화Automation하기 위해) 프로그래밍을 배웠어요.",
+        "입출력을 통해 사람과 상호작용할 수 있도록 input(), print()를 배웠고",
+        "값을 이해해서 저장하고 가공할 수 있도록 각종 연산자와 클래스를 배웠고",
+        "인간이 정말 하기 싫어하는 판단과 반복을 맡기기 위해 조건문과 반복문을 배웠어요.",
+        "그런데 지금까지 배운 것중에 자동화를 방해하는 요소가 있어요. 바로 print()와 input()이에요.",
+        "print()를 통해 화면에 결과를 출력한다면, 그 결과를 눈으로 직접 볼 사람이 있어야 해요.",
+        "input()을 통해 값을 키보드로 받아들인다면, 그 값을 입력해줄 사람이 있어야 해요.",
+        "하지만 우리는 사람 개입 없이 일처리가 진행되길 원해요. 그게 진정한 의미의 자동화니까요.",
+        "인공지능 공부와 다소 거리가 있기 때문에, 이 문서에서 우리는 이미지 파일이나 실행 파일 같은 것을 다루지 않고, 오로지 텍스트 파일만 다룰 거예요.",
+        "이미지 파일이나 실행 파일 등을 다루는 방법이 궁금하다면 인터넷을 검색해보길 바라요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "배우면 뭐가 좋아요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "프로그램의 실행 결과를 파일로 저장해놓고, 나중에 필요할 때 열어볼 수 있어요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어떻게 해요? 예를 들면요?"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 파일 출력을 위한 기본적인 형태는 다음과 같아요."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "파일제어변수 = open(파일명, 'w')    # w는 write의 머리글자이며 기존 파일 덮어씀\n\n파일제어변수.write(오직문자열한개)    # 직접적 출력부분, 여러 번 사용할 수 있음\n...\n\n파일제어변수.close()        # close()를 해주지 않으면 파일 저장에 문제가 생김"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "open()함수를 호출하면 파일을 제어할 수 있는 인스턴스를 리턴 받을 수 있어요.",
+        "이것을 파일제어변수에 할당한 후, 멤버함수인 write()를 이용해서 문자열을 파일에 쓸 수 있어요.",
+        "write()는 인수로 문자열 한 개만을 받아요.",
+        "일단 open()이 된 상태라면 write()은 몇 번이고 사용할 수 있으니, 문자열을 한 개만 인수로 전달할 수 있다고 해서 문제가 되진 않아요.",
+        "write()는 print()와 달리 자동 줄바꿈을 수행해주지 않아요.",
+        "따라서 문자열 내에서 줄바꿈을 하려면 따옴표 세 개를 이용해 여러 줄 문자열을 만들거나, 줄바꿈 문자(\\n)를 사용해야 해요.",
+        "줄바꿈 문자를 모른다면 ‣을 읽어보세요. ",
+        "문자열 한 개를 기록해주는 write() 외에, 여러 문자열이 포함된 리스트를 인수로 받아 문자열들을 연속적으로 기록해주는 writelines() 함수도 있는데, ‘그런 게 있다더라’ 정도로만 알아놓고 필요할 때 검색해서 쓰면 충분해요.",
+        "write()만으로도 필요한 작업은 다 할 수 있어요.",
+        "close()를 안 하면 파일이 제대로 저장되지 않아요. 일부만 저장되거나, 아예 저장되지 않는 경우도 있어요. 그러므로 반드시 close()를 해야 하는데, 여러분도 자주 잊게 될 거예요.",
+        "그런데 open() 후 close()를 잊는 사람들이 하도 많아서였을까, 다음과 같은 with문이 등장했어요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "with open(파일명, 'w') as 파일제어변수:\n    파일제어변수.write(오직문자열한개)    # 여러 번 사용할 수 있음\n    ...\n\n# 들여쓰기가 끝나면 자동으로 close() 됨"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "아주 편리하니까 웬만하면 with를 이용해서 파일을 쓰길 권장해요."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 파일 쓰기에 관련된 몇 가지 팁이 있어요."
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "‘w’ 대신 ‘a’를 이용하면(append의 머리글자), 이미 같은 이름의 파일이 존재할 경우 덮어쓰는 대신 파일의 맨 뒤에 내용을 추가할 수 있어요.",
+        "앞으로, 다음과 같이 파일 인코딩과 관련된 문제(UnicodeDecodeError)가 상당히 자주 발생할 거예요. "
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "UnicodeDecodeError: 'cp949' codec can't decode byte 0x2b in position 4432: illegal multibyte sequence"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "인코딩과 디코딩이란, 컴퓨터가 문자를 다루기 위해 숫자로 바꾸거나 다시 문자로 되돌리는 규칙을 말해요.",
+        "이 규칙에도 여러 가지가 있어요. ",
+        "가장 많이 사용되는 건 utf-8이에요.",
+        "앞으로 파일 인코딩 관련 문제를 피하기 위해, 이것만 사용하세요.",
+        "encoding을 지정해려주면 file을 open할 때 다음과 같이 명시하면 돼요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "open(파일명, 'w', encoding=\"utf-8\")"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 실제적인 예시 코드를 볼까요?"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 예시1: 다음 코드는 사용자의 이름을 입력받아서 output.txt에 저장해요."
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "파일이 없다면 파일을 생성하고, 파일이 있다면 그 파일의 내용을 덮어써요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "name = input('이름을 입력하세요:')\nwith open(\"output.txt\", 'w', encoding=\"utf-8\") as f:\n    f.write(f'{name}')"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "print()가 없으니, 위 코드 실행 결과 화면에 아무것도 출력되지 않는 것은 정상이에요.",
+        "output.txt를 직접 열어서 결과를 확인하세요."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 예시2: 다음 코드는 예시1에서 작성한 파일 뒤에 문자열을 추가해요."
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "’w’가 아니라 ‘a’를 이용하는 점에 주목하세요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "with open(\"output.txt\", 'a', encoding=\"utf-8\") as f:\n    f.write('님 환영합니다.')"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 예시3: 다음 코드는 상위 폴더에 위치한 output.txt를 써요."
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "이처럼 다른 폴더 내에 위치한 텍스트 파일을 쓸 수도 있는데, 이에 관해서는 운영체제의 파일 구조와 표기 방법에 대한 이해가 필요해요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "name = input('이름을 입력하세요:')\nwith open(\"../output.txt\", 'w', encoding=\"utf-8\") as f:\n    f.write(f'{name}')"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "저도 해볼래요!"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "구구단.txt에 구구단 전체를 출력해보세요.",
+        "100이하의홀수.txt에 100 이하의 홀수 전체를 출력해보세요."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "현재 위치: ‣ "
+    }
+  ],
+  "fetchedAt": "2026-04-25T10:37:48.516Z"
+}

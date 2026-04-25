@@ -1,0 +1,118 @@
+{
+  "id": "7e307b21eb2046b892f53bbe1c971959",
+  "title": "[ABMLOT01] ML 없을 때 vs 있을 때",
+  "blocks": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어디쯤 왔어요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Python으로 구현 능력을 갖춘 뒤 인공지능을 공부하기 시작했어요.",
+        "인공지능과 기계학습, 딥 러닝이 무엇인지 알아보았어요.",
+        "이번 문서에서는 기계학습이 소프트웨어에 적용되는 맥락에 대해 알아보고, 그래서 구체적으로 무엇이 어떻게 바뀌는지 이해해 볼 거예요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "배우면 뭐가 좋아요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "기계학습이 소프트웨어에 적용되는 맥락을 이해할 수 있어요.",
+        "기계학습이 적용되지 않은 소프트웨어와 적용된 소프트웨어의 차이를 살펴봄으로써 기계학습을 명확히 이해할 수 있어요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어떻게 해요? 예를 들면요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "기계학습 알고리즘의 도입 효과를 한 마디로 표현하자면, ‘컴퓨터가 문제 해결 절차를 스스로 만들도록 시킬 수 있게 되었다’예요.",
+        "함수 구조(Input, Process, Output)에 빗대어 설명해볼까요?",
+        "전통적인 알고리즘은 문제 해결 Process 그 자체예요. 컴퓨터에게 Process를 자세히 지시하고 Input을 주면, 컴퓨터가 Input을 대상으로 정해진 Process를 수행해서 Output을 내놓아요(아래 그림의 왼쪽 파란색 상자).",
+        "하지만 기계학습 알고리즘은 문제 해결을 위한 Process가 아니에요. 기계학습 알고리즘은 컴퓨터가 학습용 데이터를 통해 Process의 역할을 수행할 Model을 알아서 만들어낼 수 있도록 돕는 절차예요."
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F8b1c790b-3a13-4486-9199-5327c8131232%2F4a10a93d-337a-4a48-b9f7-5c9864f58a61%2FUntitled.png?table=block&id=80fca69a-aa49-4442-a099-9d22590eca9a&cache=v2",
+      "alt": "인공지능이 소프트웨어에 적용되는 맥락",
+      "caption": "인공지능이 소프트웨어에 적용되는 맥락"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "예를 들면, OpenAI는 글로 된 데이터를 수집해 기계학습을 수행한 후 자연어 처리 모델인 GPT를 만들었어요(아래 그림의 오른쪽 녹색 상자). GPT-1, 2, 3까지는 이렇게 만든 모델을 직접 공개했어요. 하지만 GPT-3.5부터는 프롬프트를 입력받으면 대답을 출력하는 챗봇 형태(아래 그림의 왼쪽 파란색 상자)를 만들고, 거기에 자신의 GPT 모델을 붙여 직접 서비스를 운영하고 있어요."
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F8b1c790b-3a13-4486-9199-5327c8131232%2F03967053-3028-4f93-8cd2-6c2e8471c0a7%2FUntitled.png?table=block&id=cca9d172-b15a-42cb-afb7-669f6111477d&cache=v2",
+      "alt": "OpenAI가 GPT를 직접 만들고, 직접 소프트웨어에 적용하는 맥락",
+      "caption": "OpenAI가 GPT를 직접 만들고, 직접 소프트웨어에 적용하는 맥락"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "전통적인 방식이 쓸모없어진 것은 결코 아니에요. 여전히 많은 일들이 기계학습이 아닌 알고리즘에 따라 자동화되어 처리되고 있고, 앞으로도 그럴 거예요.",
+        "다만 전통적인 알고리즘으로는 자동화하기가 무척 어렵거나 불가능했던 작업들 중에서, 기계학습 알고리즘 덕분에 자동화할 수 있게 된 것들이 많이 생겼어요. 예컨대 사람 목소리를 듣고 누구인지 알아맞히기, 사진을 보고 어떤 동물인지 분류하기, 같은 화풍으로 그림 그리기, 가상의 아나운서 목소리로 뉴스 진행하기 등이 이에 해당해요.",
+        "결국 사람이 해야만 했던 일 중 상당수를 컴퓨터로 자동화할 수 있게 되었고, 이로 인해 산업 구조가 급격히 바뀌면서 마찰적 실업이 대량으로 발생하고 있어요. 새로운 일자리와 산업도 많이 만들어지고 있으니까 꼭 나쁜 일인 것만은 아니지만, 일시적인 사회 혼란은 피하기 어렵겠죠?"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "저도 해볼래요!"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "다음 그림의 빈칸을 채워보세요."
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F8b1c790b-3a13-4486-9199-5327c8131232%2F36adbf8d-8105-4580-98c4-8385c604e0d1%2FUntitled.png?table=block&id=f3024d71-fcf3-431b-a9c8-f5d9d8c7a55d&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "기계학습 알고리즘의 작동 결과 생성되는 것은 다음 중 무엇인가요?"
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "알고리즘",
+        "모델",
+        "소프트웨어"
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "paragraph",
+      "text": "현재 위치: ‣ "
+    }
+  ],
+  "fetchedAt": "2026-04-25T10:37:55.926Z"
+}

@@ -1,0 +1,96 @@
+{
+  "id": "d964930d36714336972d18f2772b6566",
+  "title": "[ABPYPR02] 멤버십연산자",
+  "blocks": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어디쯤 왔어요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "진위를 표현하는 클래스 bool에 대해 배웠죠?",
+        "이 bool의 인스턴스는 True(참)와 False(거짓)밖에 없다는 것도 알았을 거예요",
+        "컴퓨터에게 비교연산자가 사용된 명제의 참 거짓 판단을 시키고, 그 결과를 bool 인스턴스로 받아보기도 했죠?",
+        "이 문서에서는 멤버십연산자가 사용된 식의 진위를 판별해볼 거예요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "배우면 뭐가 좋아요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "문자열에 특정 글자나 단어가 포함되어 있는지 확인할 수 있어요.",
+        "(아직 배우지 않은) 문자열 외의 다른 클래스에 대해서도 사용할 수 있어요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어떻게 해요? 예를 들면요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "멤버십연산자의 종류는 다음과 같아요.",
+        "in, not in",
+        "in부터 알아볼까요?",
+        "A in B: 문자열 B 안에 문자열 A가 포함되어 있다면 True, 그렇지 않으면 False"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": ">>> '동해' in '동해물과 백두산이'\nTrue\n>>> 'th' in 'Hello, Python!'\nTrue\n>>> '과백' in '동해물과 백두산이'\nFalse\n>>> '과 백' in '동해물과 백두산이' # 띄어쓰기도 문자임\nTrue"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "not in은 in의 진위를 뒤집어요.",
+        "A not in B: 문자열 B 안에 문자열 A가 포함되어 있다면 False, 그렇지 않으면 True"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": ">>> '미국' not in  '한국채택국제회계기준'\nTrue\n>>> '한국' not in  '한국채택국제회계기준'\nFalse"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "‘미국’ not in ‘한국채택국제회계기준’",
+        "True",
+        "‘한국’ not in ‘한국채택국제회계기준’",
+        "False"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "저도 해볼래요!"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "‘늘 공’이라는 문자열이 애국가에 포함되어 있을까요?",
+        "여러 줄 문자열을 입력하려면 따옴표 세 개로 감싸야 한다는 사실을 잊지 마세요.",
+        "애국가 1, 2, 3, 4절 모두를 살펴보세요!"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "현재 위치: ‣ "
+    }
+  ],
+  "fetchedAt": "2026-04-25T10:37:23.544Z"
+}

@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:aizic.notion.site)",
+      "mcp__claude_ai_Notion__notion-fetch",
+      "Bash(python3 -c \"content = open\\('/Users/admin/.claude/projects/-Users-admin--------/9d6c468c-2515-47be-b06d-1d6335f8d23f/tool-results/mcp-claude_ai_Notion-notion-fetch-1777108953649.txt'\\).read\\(\\); print\\(f'Total length: {len\\(content\\)}'\\)\")",
+      "Bash(python3)",
+      "Bash(npm --version)",
+      "Bash(npx --yes create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --turbopack --no-git --use-npm --yes)",
+      "Bash(npm install *)",
+      "Bash(curl -sS -o /tmp/aizic-home.html -w \"HTTP %{http_code}\\\\n\" http://localhost:3000/)",
+      "Read(//tmp/**)",
+      "Bash(curl -sS -o /tmp/aizic-py.html -w \"HTTP %{http_code}\\\\n\" http://localhost:3000/python/cl05-list-tuple)",
+      "Bash(curl -sS -o /tmp/aizic-ml.html -w \"HTTP %{http_code}\\\\n\" http://localhost:3000/ml/sl00-class-vs-reg)",
+      "Bash(curl -sS -o /tmp/aizic-home.html -w \"HTTP %{http_code}\\\\n\" http://localhost:3000/intro/home)",
+      "Bash(curl -sS -o /tmp/aizic-404.html -w \"HTTP %{http_code}\\\\n\" http://localhost:3000/search/dfs)",
+      "Read(//private/tmp/**)",
+      "Bash(npx tsc *)",
+      "Bash(kill 52839)",
+      "Bash(PORT=3000 npm run dev)",
+      "Bash(echo \"started PID $!\")",
+      "Bash(curl -sS -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(ipconfig getifaddr *)",
+      "Bash(curl -sS -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(gh auth *)",
+      "Bash(npm view *)",
+      "Bash(npm run *)"
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+node_modules/
+.next/
+out/
+.vercel
+.env
+.env.local
+.DS_Store
+*.log
+tsconfig.tsbuildinfo
+# content/notion-cache/ 는 커밋에 포함 — 사이트가 즉시 콘텐츠를 보여줄 수 있도록.
+# 노션 갱신 시에는 `npm run sync && git commit && git push` 순서로 갱신.

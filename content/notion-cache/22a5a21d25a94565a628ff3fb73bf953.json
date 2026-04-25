@@ -1,0 +1,147 @@
+{
+  "id": "22a5a21d25a94565a628ff3fb73bf953",
+  "title": "[ABMLLR03] 선형회귀 문제 풀이",
+  "blocks": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어디쯤 왔어요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Python으로 구현 능력을 갖춘 뒤 인공지능과 기계학습, 딥 러닝이 무엇인지 알아보았어요.",
+        "기계학습이 소프트웨어에 적용되는 맥락과, 달성 가능한 작업인 예측, 분류, 군집화에 대해서도 알아보았어요.",
+        "예측을 위한 선형회귀분석이 무엇인지, 왜 하는지 알아보았어요. 그리고 수학적 기초 지식을 확인했어요. ",
+        "선형회귀분석 문제를 재정의해서 ⁍를 최소화하는 문제로 바꾸는 접근법을 확인했어요.",
+        "이 문서에서는 재정의한 문제를 두 가지 방법으로 풀어볼 거예요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "배우면 뭐가 좋아요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "선형회귀분석을 마무리하고 완성된 회귀식을 얻을 수 있어요.",
+        "완성된 회귀식을 이용해 예측을 수행할 수 있어요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어떻게 해요? 예를 들면요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "⁍이므로, ⁍는 ⁍예요. 따라서 다음과 같이 나타낼 수 있어요."
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "이때, (모든 ⁍가 0인 등의 극단적 상황만 아니라면) ⁍는 ⁍와 ⁍ 각각에 대해 최고차항의 계수가 양수인 이차함수로 표현될 수 있어요. 따라서 ⁍와 ⁍가 다음 두 식을 만족할 때 ⁍는 최소가 돼요."
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "구하고자 하는 값이 ⁍와 ⁍ 두 개였죠? 그런데 ⁍와 ⁍에 관한 식을 두 개 확보했네요! ",
+        "따라서 우리는 연립방정식 풀이를 통해 ⁍와 ⁍를 구해낼 수 있어요. ",
+        "또는, 경사하강법으로 위 두 식을 만족하는 ⁍와 ⁍를 구할 수도 있어요. ",
+        "아래에서 두 방법 모두 사용해볼게요."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 연립방정식 풀이(공식 유도 과정)"
+    },
+    {
+      "type": "paragraph",
+      "text": "이므로,"
+    },
+    {
+      "type": "paragraph",
+      "text": "그리고,"
+    },
+    {
+      "type": "paragraph",
+      "text": "이므로,"
+    },
+    {
+      "type": "paragraph",
+      "text": "따라서,"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 유도된 공식을 이용한 코드 구현"
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "# 다음 X와 Y에 대해 평균, 분산, 표준편차, 공분산을 구하는 코드를 작성\n# (0, 1), (2, 3), (4, 2), (6, 4)\nX = [0, 2, 4, 6]\nY = [1, 3, 2, 4]\nn = len(X)  # 또는 len(Y)\n\n# 한 리스트에 담긴 숫자들의 평균을 반환하는 함수\ndef mean(alist):\n    return sum(alist)/len(alist)\n\n# 두 리스트의 대응하는 숫자들을 곱한 뒤, 그것들의 평균을 반환하는 함수\ndef mean_of_elementwise_multiplication(alist, blist):\n    s = 0\n    for i in range(len(alist)):\n        s = s + alist[i]*blist[i]\n    return s / len(alist)\n\n# 평균\nmean_X = mean(X)\nmean_Y = mean(Y)\n\n# 편차\ndeviation_X = []\ndeviation_Y = []\nfor i in range(n):\n    deviation_X.append(X[i]-mean_X)\n    deviation_Y.append(Y[i]-mean_Y)\n\n# 분산: 편차 제곱의 평균\nVar_X = mean_of_elementwise_multiplication(deviation_X, deviation_X)\nVar_Y = mean_of_elementwise_multiplication(deviation_Y, deviation_Y)\n\n# 표준편차: 분산의 양의 제곱근\nsd_X = Var_X**0.5\nsd_Y = Var_Y**0.5\n\n# 공분산: 편차간 곱의 평균\nCov_XY = mean_of_elementwise_multiplication(deviation_X, deviation_Y)\n\na = Cov_XY / Var_X\nb = mean_Y - a*mean_X\n\nprint(f'회귀식: y = {a}x + {b}')"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 경사하강법 풀이"
+    },
+    {
+      "type": "paragraph",
+      "text": "임의의 ⁍과 ⁍을 설정한 뒤, 다음 점화식을 이용해 값을 연속적으로 갱신하면 돼요."
+    },
+    {
+      "type": "paragraph",
+      "text": "⁍의 ⁍와 ⁍에 대한 편미분은 각각 미분계수의 정의를 이용해 다음과 같이 구할 수 있어요."
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 경사하강법을 이용한 코드 구현"
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "# x, y 데이터 설정\nx = [0, 2, 4, 6]\ny = [1, 3, 2, 4]\n\n# 학습률 및 미분을 위한 작은 값 h 설정\nlr = 0.05\nh = 0.00001\n\n# 초기 a, b 값 설정\na_t = 0\nb_t = 0\n\n# MSE(평균 제곱 오차, 사실은 오차 제곱의 평균) 계산 함수\ndef MSE(a, b):\n    SE = []  # 오차 제곱을 저장할 리스트\n    for i in range(len(x)):\n        SE.append((y[i]-(a*x[i]+b))**2)  # 오차 제곱 계산 후 추가\n    return sum(SE)/len(SE)  # 오차 제곱의 평균 반환\n\n# a에 대한 MSE의 미분 계산 함수\ndef dMSE_da(a, b):\n    n = MSE(a+h, b)-MSE(a-h, b)  # 분자 계산\n    d = 2*h  # 분모 계산\n    return n/d  # 미분 값 반환\n\n# b에 대한 MSE의 미분 계산 함수\ndef dMSE_db(a, b):\n    n = MSE(a, b+h)-MSE(a, b-h)  # 분자 계산\n    d = 2*h  # 분모 계산\n    return n/d  # 미분 값 반환\n\n# 경사 하강법을 이용한 a, b 값 최적화\nwhile True:\n    adiff = dMSE_da(a_t, b_t)*lr  # a에 대한 변화량 계산\n    bdiff = dMSE_db(a_t, b_t)*lr  # b에 대한 변화량 계산\n    a_t = a_t - adiff  # a 업데이트\n    b_t = b_t - bdiff  # b 업데이트\n    if abs(adiff)+abs(bdiff) < 0.000001:  # 변화량이 충분히 작으면 종료\n        break\n\n# 최적화된 a, b 값 출력\nprint(f'y = {a_t}x + {b_t}')  # y = 0.40000503940984533x + 1.2999770557167722"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "저도 해볼래요!"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "다음 물음에 답해보세요."
+      ]
+    },
+    {
+      "type": "quote",
+      "text": "⁍평면의 두 점 (1, 3)과 (4, 9)를 지나는 직선의 방정식을 구하시오."
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "위 문제를 수학 시간에 배운 방법대로 풀어보세요.",
+        "선형회귀분석의 공식을 이용해 기울기와 y절편을 구해서 위 문제를 풀어보세요.",
+        "위 문제를 경사하강법으로 풀어보세요."
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "paragraph",
+      "text": "현재 위치: ‣ "
+    }
+  ],
+  "fetchedAt": "2026-04-25T10:38:04.375Z"
+}

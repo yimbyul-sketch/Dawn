@@ -1,0 +1,149 @@
+{
+  "id": "7a8311e4182b4ff5a6a8f43956c6c540",
+  "title": "[ABPYCL04] 명시적 형 변환",
+  "blocks": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어디쯤 왔어요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "드디어 데이터를 입력받아서 처리하고 출력할 수 있게 되었어요!",
+        "입력받기: input()",
+        "출력하기: print()",
+        "입력과 출력 사이에서 처리하기",
+        "각종 연산자, 내장함수, 내가 만든 함수 사용",
+        "그런데 input 함수에는 아쉬운 점이 있었어요.",
+        "사용자가 입력한 값을 무조건 문자열로만 반환해주는다는 거였죠.",
+        "그래서, 이 문서에서는 형변환(=클래스 변환)을 배워볼거예요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "배우면 뭐가 좋아요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "우리가 필요한 연산을 수행하기 위해서, 형변환을 통해 인스턴스의 클래스를 자유자재로 바꿀 수 있어요.",
+        "인스턴스의 클래스마다 적용할 수 있는 연산이 달라질 수 있다는 사실을 배웠죠?",
+        "예를 들면, int를 str로 바꿔서 덧셈 연산자를 이용하면 글자 이어붙이기를 할 수도 있어요.",
+        "숫자가 담긴 문자열을 숫자로 바꿔서 숫자계산을 할 수 있어요.",
+        "이 방법으로, 문자열만 입력받을 수 있는 input() 함수의 한계를 극복할 수 있어요.",
+        "float를 int로 바꿔서 소수점 아래를 간단히 ‘버림’할 수 있어요.",
+        "그 외에도 할 수 있는 일이 굉장히 많이 늘어나요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어떻게 해요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "방법은 아주 쉬워요. 클래스의 이름을 함수 이름처럼 사용하면 돼요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "변환후클래스(변환전인스턴스)"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "그래서 클래스 이름을 제대로 알아야 해요.",
+        "정수는 int",
+        "실수는 float",
+        "문자열은 str",
+        "진위는 bool",
+        "앞으로도 여러 클래스를 추가로 배우게 될 텐데, 그 때마다 이름을 제대로 외워두어야 사용할 수 있어요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "예를 들면요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "정수 44와 33을 각각 문자열로 변환해서 변수에 할당한 후, 더해서 화면에 출력해볼게요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "a = str(44)\nb = str(33)\nc = a+b\nprint(c)  # 4433"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "물론 다음과 같이 변수를 사용하지 않고 한 줄로 처리할 수도 있겠죠?"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "print(str(44)+str(33))"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "코드는 길다고 좋은 것도 아니고 짧다고 좋은 것도 아니에요. 길이보다 가독성이 중요해요."
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "사용자로부터 점수를 입력받아 80점 이상이면 A, 60점 이상이면 B, 60점 미만이면 C를 화면에 출력해볼게요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "score = input('당신의 점수는? ')   # 사용자가 72.2를 입력했다고 가정\nscore = float(score)\nisA = int(80 <= score)            # isA는 0\nisB = int(60 <= score < 80)       # isB는 1\nisC = int(score < 60)             # isC는 0\nr = isA*'A' + isB*'B' + isC*'C'   # 'A'*0 + 'B'*1 + 'C'*0 은 ''+'B'+''임\nprint(r)                          # 즉 r은 'B'가 되고, 이것이 화면에 출력됨"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "위 코드는 사실 조건문으로 표현하면 훨씬 더 쉽게 처리할 수 있어요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "저도 해볼래요!"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "다음과 같이 사용자로부터 두 개의 숫자(x와 y)를 입력받아, x의 y제곱을 계산하여 화면에 출력하는 프로그램을 만들어보세요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "x: 2\ny: 10\n1024"
+    },
+    {
+      "type": "paragraph",
+      "text": "현재 위치: ‣"
+    }
+  ],
+  "fetchedAt": "2026-04-25T10:37:11.537Z"
+}

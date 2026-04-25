@@ -1,0 +1,275 @@
+{
+  "id": "d2e25e240d9d4fc6afbd548ceb2e6680",
+  "title": "[ABPYFN00] 함수 구조와 내장함수",
+  "blocks": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어디쯤 왔어요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "연산자를 배웠고, 피연산자를 배웠어요.",
+        "조금 더 정확히 말하자면 사칙연산을 비롯한 각종 산술연산자를 배웠고,",
+        "산술연산자의 피연산자로 사용될 수 있는 여러 클래스의 종류를 배웠어요.",
+        "예를 들면 덧셈 산술연산자(+)를 이용해 숫자를 더할 수도 있고, 문자열을 더할 수도 있다는 것을 확인해봤어요.",
+        "이 문서에서는, 우리가 코드를 통해서 구현하는 프로그램이 어떻게 생겼는지 배워요. ",
+        "그리고 그 프로그램을 구성하는 작은 단위인 함수에 대해서도 공부해요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "배우면 뭐가 좋아요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "함수 구조를 배우면 만들고자 하는 프로그램을 이미지화할 수 있어요.",
+        "예컨대 ‘~를 입력받아서, ~하게 처리하고, ~를 출력하는 프로그램을 만들자’라고 머릿속으로 구상할 수 있어요.",
+        "전체 구조를 파악한 채 프로그래밍을 하면 스스로 답답하지 않고, 에러가 줄고, 막막하지 않고, 개발 속도가 빨라져요.",
+        "이미지화한 프로그램을 만들기 위해서, 프로그램보다 작은 단위인 ‘함수’들을 필요에 따라 만들어 사용하거나 배치할 수 있어요.",
+        "큰 덩어리 완성품(프로그램)을 만들기 위해 작은 부품들(함수)을 만들고, 그 작은 부품들을 조립하는 거예요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어떻게 해요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "우리가 만드는 프로그램이 함수와 같이 생겼음을 아는 게 중요해요. 사용자로부터 무언가를 받아서(Input), 처리하고(Process), 사용자에게 다시 내보내는(Output) 거죠.",
+        "Input과 Process와 Output의 머리글자를 따서, 이것을 IPO 구조라고 해요."
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F47cab52d-76f3-4162-b7dc-ddc1866ba977%2FUntitled.png?table=block&id=e5118f3d-8be2-483b-9243-36ae75240d78&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "그래서 프로그래밍 언어의 문법은, 위 구조를 완성하기 위한 도구들(클래스, 연산자, 함수, 기타 명령)을 사용하는 방법이에요.",
+        "Input을 위한 도구에는 입력 함수가 있어요.",
+        "Process를 위한 도구에는 산술연산자를 비롯한 각종 연산자와 조건문, 반복문, 각종 데이터 처리를 위한 함수가 있어요. ",
+        "Output을 위한 도구에는 출력 함수가 있어요.",
+        "프로그램 전체가 위와 같이 생겼는데, 그 처리(Process)절차에서도 함수들이 사용되는 거예요.",
+        "정리하자면, 우리가 만들 프로그램은 결국 다음과 같이 생겼어요."
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F939e9903-ac23-4eec-83d4-4dd9bb0ceb66%2FUntitled.png?table=block&id=8673fccc-0d6c-4aff-9a55-5b41ae1d6a6b&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "지금부터 프로그램을 만들 때 사용할 수 있는 간단한 함수들을 배워볼게요. 이 함수들은 Python이 기본적으로 가지고 있는 것들이고, 그래서 내장 함수(built-in function)라고도 불러요.",
+        "가장 먼저 배울 함수는 type()이에요. type() 함수는 인스턴스의 클래스가 무엇인지 알려줘요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": ">>> type('code')\n<class 'str'>"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "다음으로 배울 함수는 len()이에요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": ">>> len('abcde')\n5"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "len() 함수를 조금 더 자세히 들여다볼까요? len()은 들어온 데이터의 길이를 구해서 반환해요. 다음과 같이 말이죠."
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fa966ba11-5940-4c20-b03c-d75d1aa3b78e%2FUntitled.png?table=block&id=f0040b90-345e-4561-8501-2c8c154a3fa4&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "다음으로는 abs()를 써볼까요? abs는 absolute의 앞글자로, 절댓값을 구해주는 함수예요. "
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": ">>> abs(-123)\n123"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "다음으로는 round() 함수에 대해서 배워볼게요. round() 함수는 전달받은 값을 반올림해서 반환해요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": ">>> round(3.141592)\n3"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "소수점 아래 둘째 자리까지 남기려면 어떻게 해야 할까요? 다음과 같이 값을 두 개 넘겨주면 돼요. "
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": ">>> round(3.141592, 2)\n3.14"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "round() 함수에 전달하는 첫 번째 값은 반올림하려는 숫자, 두 번째 값은 남길 소수점 아래 자리의 수예요.",
+        "round() 함수는 소수점 아래 자리의 숫자에 대해서, 수학 시간에 배운 일반적인 반올림과는 살짝 다르게 작동해요. 이유는 컴퓨터가 소수점이 있는 숫자(float, 실수)를 처리하는 방법과 관련되어 있어요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "예를 들면요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "지금부터는 명령을 Shell에 입력하고 결과를 살펴볼게요."
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F8b1c790b-3a13-4486-9199-5327c8131232%2F8182d809-ebea-4f7e-9be8-f71b8506c562%2FUntitled.png?table=block&id=da314538-2453-4239-b197-e0ac634ec953&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "위 실행 결과를 보면, len() 함수가 ‘안녕’이라는 한글 두 글자에 대해서 길이 2를 반환하고 있어요. 한글 문장의 길이를 파악할 때도 유용하게 사용할 수 있다는 뜻이죠. 당연한 이야기지만, 다음과 같이 여러 줄 문자열에도 활용할 수 있어요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": ">>> len('''동해물과 백두산이 마르고 닳도록\n하느님이 보우하사 우리나라 만세\n무궁화 삼천리 화려강산\n대한사람 대한으로 길이 보전하세''')\n66"
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F8b1c790b-3a13-4486-9199-5327c8131232%2F5d4a0c2e-0414-441b-b9fc-159724427d31%2FUntitled.png?table=block&id=c1f866d0-0158-4d1a-882e-c00954723106&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "문자열은 따옴표로 감싸야 하는데, 위 실행 결과 예시에서는 abc를 따옴표로 감싸지 않았고, 그래서 에러가 났어요.",
+        "만약 문자열 abc의 길이를 구하고 싶다면 다음과 같이 Shell에 입력해보세요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "len('abc')"
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F8b1c790b-3a13-4486-9199-5327c8131232%2F9d2490fd-74ca-4058-9cd2-e47686c2fadf%2FUntitled.png?table=block&id=6bbf398b-8eed-4372-81bb-628ce54607a1&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "정수나 실수 등 숫자는 len() 함수에 집어넣을 수 없다는 사실도 위 에러메시지에서 알 수 있어요.",
+        "다음으로는 abs() 함수를 사용해볼게요."
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5b985245-86b9-405f-88d0-f4b7ee28e42d%2FUntitled.png?table=block&id=ec6f7f36-b906-40b5-ae5e-71d544786039&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "여러분도 알듯, 절댓값이란 0으로부터 숫자가 얼마나 멀리 떨어져있는지를 나타내죠?",
+        "그러니 문자열에 대해서는 절댓값을 구할 수 없는 게 정상이에요.",
+        "그래서 ‘hello’에 대해 절댓값을 요구하자 에러가 난 것을 볼 수 있어요.",
+        "그 외 다른 함수들도 테스트 해볼 수 있어요. 필요하다면 Shell에서 직접 테스트를 해보면 돼요. 지금까지 해본 것처럼요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "저도 해볼래요!"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Shell을 이용해서,",
+        "인터넷에서 좋아하는 노래 가사를 찾아 길이를 구해보세요.",
+        "문자열 여러 줄을 표현할 때에는 따옴표 세 개로 감싸야 한다는 사실을 잊지 마세요.",
+        "(수학 시간에 배웠다면)자연로그의 밑 e를 소수점 아래 몇 자리까지만 구해보세요. 다음 정의를 이용하세요."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 답(최대한 읽지 않고 구해보세요!)"
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "round((1+(1/99999999))**99999999, 2)"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "99999999를 너무 크게 입력하면 값을 계산하지 못해요.",
+        "99999999를 너무 작게 입력하면 정확한 값을 구할 수 없어요.",
+        "e의 값은 2.7182818284…로 알려져 있어요."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "현재 위치: ‣ "
+    }
+  ],
+  "fetchedAt": "2026-04-25T10:37:37.965Z"
+}

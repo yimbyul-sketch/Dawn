@@ -1,0 +1,151 @@
+{
+  "id": "3b4eb045e82c4f27b20ad7c01b6da12b",
+  "title": "[ABPYIO03] 파일 입력",
+  "blocks": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어디쯤 왔어요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "우리는 지난 문서에서 파일 출력에 대해 배웠어요.",
+        "이제 텍스트 파일을 만들고, 내용을 추가하고, 파일을 저장할 수 있어요.",
+        "이번 문서에서는 텍스트 파일의 내용을 읽어들이는 방법을 배울 거예요",
+        "이것을 파일(로부터의) 입력이라고 해요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "배우면 뭐가 좋아요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "사람의 개입 없이 파일로부터 내용을 읽어 작업을 수행할 수 있어요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어떻게 해요? 예를 들면요?"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 파일 입력을 위한 기본적인 형태는 다음과 같아요."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "파일제어변수 = open(파일명, 'r')    # r은 read의 머리글자\n\n문자열변수 = 파일제어변수.read()    # 파일 내용 전체가 하나의 문자열로 반환됨\n\n파일제어변수.close()        # close()를 해주지 않으면 파일 저장에 문제가 생김"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "파일 출력 때와 마찬가지로, open() 함수를 호출하면 파일을 제어할 수 있는 인스턴스(파일 객체라고도 표현)를 리턴 받을 수 있어요.",
+        "이것을 파일제어변수에 할당한 후, 멤버 함수인 read()를 이용해서 문자열을 파일로부터 읽어들일 수 있어요.",
+        "read()는 파일 내용 전체를 하나의 문자열로 반환해요.",
+        "여러 줄일 경우, 문자열에 줄바꿈 문자(\\n)가 포함돼요.",
+        "close()를 안 하면 파일 이용 권한이 운영체제에 반환되지 않는 등 문제가 생길 수 있어요.",
+        "그래서 파일 입력의 경우에도 다음과 같이 with문을 이용하길 추천해요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "with open(파일명, 'r') as 파일제어변수:\n    문자열변수 = 파일제어변수.read()    # 문자열 한 개가 반환됨\n\n# 들여쓰기가 끝나면 자동으로 close() 됨"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 파일 읽기에서는 인코딩 문제가 자주 발생해요."
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "encoding을 지정해려주면 file을 open할 때 다음과 같이 파라미터를 지정해서 값을 전달하면 돼요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "open(파일명, 'r', encoding=\"utf-8\")"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "가끔 cp949로 되어 있는 파일도 있어요. 그런 경우엔 다음과 같이 명시해주세요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "open(파일명, 'r', encoding=\"cp949\")"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "실습파일을 만들기 위해 메모장에서 파일을 저장할 때도 인코딩을 UTF-8로 지정해주세요."
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F6dd79bab-cfd9-4e3f-8a65-d12eac2db611%2FUntitled.png?table=block&id=08b219f3-0bcd-4ab4-9bf1-f86427501952&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 실제적인 예시 코드를 볼까요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "예시1: 다음 코드는 사용자의 이름을 name.txt로부터 읽어들여 화면에 출력해요.",
+        "name.txt가 같은 폴더에 존재하는 상태여야 작동해요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "with open(\"name.txt\", 'r', encoding=\"utf-8\") as f:\n    name = f.read()\nprint(name)"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "예시2: 다음 코드는 digits.txt에서 띄어쓰기로 구분된 여러 숫자를 읽어들여서 평균을 number.txt에 출력해요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "with open(\"digits.txt\", 'r', encoding=\"utf-8\") as f:\n    nums = f.read()\nnums = nums.split(' ')  # 띄어쓰기로 구분된 숫자를 쪼개 리스트로 반환\nfor i in range(len(nums)):\n    nums[i] = int(nums[i])\n\naverage = sum(nums)/len(nums)\nwith open(\"number.txt\", 'w', encoding=\"utf-8\") as f:\n    f.write(str(average))"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "저도 해볼래요!"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "직전 문서인 ‣에서 만든 100이하의홀수.txt에서 모든 숫자를 읽어들여, 6의 배수이거나 7의 배수인 숫자만 numbers.txt에 출력해보세요."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "현재 위치: ‣ "
+    }
+  ],
+  "fetchedAt": "2026-04-25T10:37:50.101Z"
+}

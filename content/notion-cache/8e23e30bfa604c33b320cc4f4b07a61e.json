@@ -1,0 +1,451 @@
+{
+  "id": "8e23e30bfa604c33b320cc4f4b07a61e",
+  "title": "[ABPYLI00] 모듈/패키지, pip활용",
+  "blocks": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어디쯤 왔어요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "이제 문법 대부분이 거의 끝났어요."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 그런데 아주 중요한 것이 하나 남아있네요. 바로 ‘재사용하기’예요."
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "변수, 함수, 클래스를 재사용하는 방법은 이미 충분히 알아보았어요.",
+        "이 문서에서는 그 다음 단계를 다뤄요.",
+        "깊게 이해해야 하는 내용은 아니니까 부담없이 보세요.",
+        "이 문서에서는 내가 만든 파일 또는 남이 만든 파일의 클래스/함수/변수를 재사용하는 방법을 배워볼게요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "배우면 뭐가 좋아요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "코드 작성 효율이 극단적으로 올라가요."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 다음 문서에서 가져옴: ‣ "
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "타인의 코드를 이용하면 나 혼자서는 만들지 못할 것들을 만들 수 있어요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어떻게 해요? 예를 들면요?"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 내가 만든 코드를 재사용하는 방법"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 이 내용을 이해하기 위해서는 실습이 필요하고, 실습을 위해서는 준비가 필요해요."
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "위 압축파일을 다운로드 받아서 압축을 푸세요.",
+        "그러면 다음과 같은 내용물이 준비되어 있어요."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ practice/"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ myfile.py"
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "# 빈 파일\n# 여기서 다른 모듈, 패키지 실습을 진행할 예정임"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ myfirstmodule.py"
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "useful_variable = 3.14\ndef useful_function(x):\n    return x*x\n\nprint('이건 실행되면 안되는데!')"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ insa/"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ hello.py"
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "def say_hello(name):\n    print(f'{name}님 안녕하세요!')"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ goodbye.py"
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "def say_goodbye(name):\n    print(f'{name}님, 안녕히 가세요!')\n\nif __name__=='__main__':\n    print('이 파일을 직접 실행할 때만 실행되는 부분임')"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 파일을 재사용하는 방법"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Python에서는 코드 재사용을 위해 사용되는 파일을 모듈(Module)이라고 불러요.",
+        "모듈을 사용하기 위해서는 import 키워드를 이용해서 먼저 다음과 같이 명령해요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "# myfile.py\nimport myfirstmodule   # import myfirstmodule.py 가 아님에 주의"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "myfirstmodule 안에는 3.14가 할당된 변수인 useful_variable과, 제곱한 값을 반환하는 함수인 useful_function이 있어요. 이것들은 myfirstmodule 안에 있으므로 점(마침표)을 찍고 변수명과 함수명을 써줘야 해요.",
+        "‘~안에 있는 것’을 나타낼 때 점을 찍는다는 사실은 ‣에서 이미 배운 적 있죠?"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 가장 기초 문법에 맞춰 사용해볼까요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "myfile.py에 import 다음 내용을 작성하세요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "# myfile.py\nimport myfirstmodule\nprint(myfirstmodule.useful_variable)\nx = myfirstmodule.useful_function(5)\nprint(x)"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "위 코드를 실행하면 3.14와 25가 정상적으로 출력되긴 하는데, 예상과 달리 ‘이건 실행되면 안되는데!’ 라는 메시지가 출력돼요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "이건 실행되면 안되는데!\n3.14\n25"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 맨 윗줄이 왜 실행되었을지 궁금하니까 myfirstmodule.py의 코드를 살펴볼게요."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "useful_variable = 3.14\ndef useful_function(x):\n    return x*x\n\nprint('이건 실행되면 안되는데!')"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "맨 마지막 줄 때문에 ‘이건 실행되면 안되는데!’라는 문자열이 화면에 출력된 것임을 알 수 있어요. 깔끔하게 변수나 함수만 import되면 되는데, 내 생각처럼 그렇게 되지는 않고, 코드 전체가 실행됐다는 뜻이죠. ",
+        "그렇다면 해결책은, 다음과 같은 기능을 코드로 구현하는 것이겠죠?",
+        "특정 구역을 설정",
+        "사용자에 의해 파일이 직접 실행될 때는 이 구역의 명령을 실행",
+        "import에 의해 다른 파일에서 모듈로써 파일이 사용이 될 때는 이 구역의 명령을 실행하지 않음",
+        "위 기능은 쉽게 구현할 수 있어요. 다음과 같이 조건문으로 __name__=='__main__'일 때만 실행하도록 명령하면 돼요. 그러면 조건문 아래의 코드는, 파일이 모듈로서 import 되었을 때에는 작동하지 않고, 파일이 직접 실행됐을 때만 작동할 거예요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "# myfirstmodule.py\n\nuseful_variable = 3.14\ndef useful_function(x):\n    return x*x\n\nif __name__=='__main__':\n    print('이건 실행되면 안되는데!')"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "위와 같이 코드를 바꾼 뒤 myfile.py를 실행하면, 정상적으로 useful_variable과 useful_function()만 사용된 결과를 얻을 수 있어요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "3.14\n25"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "import 대상의 이름이 너무 길면 as 키워드를 이용해서 약칭을 부여하는 것도 좋은 방법이에요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "import myfirstmodule as mfm"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 변수나 함수 각각을 따로 가져오는 방법도 있어요."
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "이 방법을 이용하면 변수나 함수를 쓸 때 모듈명을 일일이 나타낼 필요가 없어요.",
+        "다음과 같이 from을 이용하면 돼요. 물론 as도 함께 사용할 수 있어요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "from myfirstmodule import useful_variable\nfrom myfirstmodule import useful_function as uf"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "그러면 코드를 쓰기도 쉽고, 가독성도 훨씬 좋아져요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "# myfile.py\nfrom myfirstmodule import useful_variable\nfrom myfirstmodule import useful_function as uf\nprint(useful_variable)\nx = uf(5)\nprint(x)"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 폴더 단위로 파일을 담아 재사용하는 방법"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Python에서는 코드 재사용을 위해 사용되는 폴더를 패키지(Package)라고 불러요.",
+        "패키지는 여러 모듈을 담을 수 있어요.",
+        "보통 패키지 단위로 코드를 공유해요."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ insa 패키지(폴더) 아래에 있는 모듈 hello와 goodbye를 이용하는 코드를 myfile.py에 작성해볼게요."
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "이용 방법은 똑같아요. 점을 찍고 그 아래에 있는 것을 쓰면 돼요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "# myfile.py\nimport insa.hello\ninsa.hello.say_hello('고세화')"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 실행 결과"
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "고세화님 안녕하세요!"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "from이나 as도 사용할 수 있어요. 실행 결과는 위 코드와 같아요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "# myfile.py\nfrom insa.hello import say_hello as sh\nsh('고세화')"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "한 패키지 안의 여러 모듈을 가져다 쓸 수도 있어요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "# myfile.py\nfrom insa.hello import say_hello as sh\nfrom insa import goodbye  # 추가됨\nsh('고세화')\ngoodbye.say_goodbye('고세화')"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 실행 결과"
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "고세화님 안녕하세요!\n고세화님, 안녕히 가세요!"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 남이 만든 코드를 재사용하는 방법"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ Python 인터프리터 및 IDLE와 함께 설치된 모듈 사용법"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "지금까지 내장 클래스, 내장 함수, …, 이런 것들을 배웠죠?",
+        "당연히 내장 모듈도 있어요. 그리고 그 모듈에는 유용한 것들도 있죠.",
+        "하지만 이것들을 전부 외워서 쓰거나 하는 일은 불가능해요. 따라서 지금 여러분이 갖춰야 할 것은, ‘이정도 기능은 내장 모듈에 있지 않을까?’를 떠올리는 발상 능력과 인터넷을 검색해보는 적극성이에요.",
+        "유용한 내장 모듈과 함수들을 표로 간단히 정리해볼까요?"
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "위에서 제시한 것들 중 몇 가지만 이용해서 실습해볼게요."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ time 모듈을 이용해서 카운트다운하기"
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "import time\nfor i in range(3, 0, -1):\n    time.sleep(1)\n    print(i)"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ time 모듈을 이용해서 프로그램 실행 시간 구하기"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "무식하게 1부터 1억까지 더하게 시켰을 때 몇 초가 걸리는지 구해볼게요.",
+        "time() 함수는 유닉스타임(1970년1월1일00:00:00부터 현재까지의 경과초)을 반환해요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "from time import time\n\nt = time()\ns = 0\nfor i in range(1,100000000+1,1):\n    s += i\nt = time() - t\nprint(f'답은 {s}이며, 구하는데 {t}초 걸림.')"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 로또번호추첨(1이상 45이하 자연수 중에서 6개를 임의추출)"
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "import random\n전체번호 = []\nfor i in range(1,46):\n    전체번호.append(i)\n당첨번호 = random.sample(전체번호, 6)\nprint(당첨번호)"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 기본 제공되지 않은 패키지를 설치해서 사용하는 방법은 다음과 같아요"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ Windows에서 패키지 설치 방법"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "[명령 프롬프트] 실행",
+        "pip install 패키지명"
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "‘내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는 배치 파일이 아닙니다’가 아닐 경우: 다음 문서를 참고하여 환경 변수 PATH에 Python 설치 경로를 추가하거나 Python을 삭제하고 재설치하세요.",
+        "‣ "
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ Mac, Linux에서 패키지 설치 방법"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "터미널 실행",
+        "pip install 패키지명",
+        "설치된 Python 버전 및 이름에 따라 명령이 달라질 수 있어요.",
+        "설치가 완료되었다면 이제 import할 수 있어요.",
+        "pip를 이용해 설치한 패키지는 같은 폴더에 있지 않아도 import 할 수 있어요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "저도 해볼래요!"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "time 모듈에는 ctime() 함수가 있어요. 사용해보세요.",
+        "ctime() 함수가 작동하고 반환한 문자열을 이용해서 ‘지금은 XX월 YY일 HH시 MM분입니다’를 화면에 출력해보세요.",
+        "가능하다면 월, 일, 시, 분 모두 2자리로 출력해보세요.",
+        "문자열에는 zfill()이라는 멤버 함수가 있는데, 이것을 응용하면 굉장히 편할 거예요."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ pygame 패키지를 설치한 뒤 다음 코드를 실행해보세요. sys는 기본적으로 설치되어 있으므로 추가 설치할 필요는 없어요."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "import pygame\nimport sys\n\npygame.init()\n\nscreen_width, screen_height = 800, 600\nscreen = pygame.display.set_mode((screen_width, screen_height))\nclock = pygame.time.Clock()\n\npaddle_width, paddle_height = 100, 20\npaddle_x, paddle_y = (screen_width - paddle_width) // 2, screen_height - 2*paddle_height\npaddle_speed = 8\n\nball_dim = 20\nball_x, ball_y = screen_width // 2, screen_height // 2\nball_speed_x, ball_speed_y = 4, 4\n\nbrick_width, brick_height = 50, 20\nbricks = [(x, y) for y in range(50, brick_height*10, brick_height+10) for x in range(50, screen_width, brick_width+10)]\n\nwhile True:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            pygame.quit()\n            sys.exit()\n\n    keys = pygame.key.get_pressed()\n    if keys[pygame.K_LEFT] and paddle_x - paddle_speed > 0:\n        paddle_x -= paddle_speed\n    if keys[pygame.K_RIGHT] and paddle_x + paddle_speed < screen_width - paddle_width:\n        paddle_x += paddle_speed\n\n    ball_x += ball_speed_x\n    ball_y += ball_speed_y\n\n    if ball_x <= 0 or ball_x >= screen_width - ball_dim:\n        ball_speed_x *= -1\n    if ball_y <= 0:\n        ball_speed_y *= -1\n    if ball_y >= screen_height:\n        pygame.quit()\n        sys.exit()\n\n    if paddle_x < ball_x < paddle_x + paddle_width and paddle_y < ball_y + ball_dim < paddle_y + paddle_height:\n        ball_speed_y *= -1\n\n    for brick in bricks:\n        if brick[0] < ball_x < brick[0] + brick_width and brick[1] < ball_y + ball_dim < brick[1] + brick_height:\n            bricks.remove(brick)\n            ball_speed_y *= -1\n            break\n\n    screen.fill((0, 0, 0))\n    pygame.draw.rect(screen, (255, 255, 255), pygame.Rect(paddle_x, paddle_y, paddle_width, paddle_height))\n    pygame.draw.rect(screen, (255, 255, 255), pygame.Rect(ball_x, ball_y, ball_dim, ball_dim))\n\n    for brick in bricks:\n        pygame.draw.rect(screen, (255, 255, 255), pygame.Rect(brick[0], brick[1], brick_width, brick_height))\n\n    pygame.display.flip()\n    clock.tick(60)"
+    },
+    {
+      "type": "paragraph",
+      "text": "현재 위치: ‣ "
+    }
+  ],
+  "fetchedAt": "2026-04-25T10:37:53.135Z"
+}

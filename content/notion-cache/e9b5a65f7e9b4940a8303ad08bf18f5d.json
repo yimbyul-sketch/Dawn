@@ -1,0 +1,256 @@
+{
+  "id": "e9b5a65f7e9b4940a8303ad08bf18f5d",
+  "title": "[ABPYIO00] 화면 출력",
+  "blocks": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★\n★★★★★★★★★★★★★★★★★★★★★★★\n\n이 문서부터 Shell이 아닌 Editor를 사용할 거예요.\n\n★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Shell은 뭐고 Editor는 뭐더라? 싶으면 여기를 클릭하세요"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "앞으로는 연습을 위해서 Shell에 명령을 입력해야 할 땐, 제가 코드에 >>> 표시를 해둘게요. 예를 들면, 다음과 같이 표시된 코드 박스를 보면 1+2를 Shell에 입력해보는 거예요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": ">>> 1 + 2\n3"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "즉, 이제부터는 제가 코드에 >>> 표시를 해두지 않았다면 모든 코드는 Editor에 입력하고 [Run]→[Run Module (F5)]을 눌러 실행하는 거예요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어디쯤 왔어요?"
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 프로그램이 함수(IPO) 구조를 띤다는 사실을 배웠어요. IPO 구조란?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "사용자로부터 데이터를 입력받아(Input)",
+        "처리한 후(Process)",
+        "처리 결과를 다시 사용자에게 돌려주는(Output) 모양새예요."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "▸ 지금까지는 처리(Process)를 위해 필요한 것들을 배웠어요."
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "(메모리 위에) 각종 클래스의 인스턴스를 생성하고, 변수에 할당해서 보존하기를 배웠어요.",
+        "정수, 실수, 문자열, 진위 클래스를 배웠어요.",
+        "산술, 비교, 멤버십, 논리, 할당 연산자를 배웠어요.",
+        "함수를 배웠어요.",
+        "내장 함수인 len(), type(), round() 등을 배웠어요.",
+        "나에게 필요한 함수를 직접 정의하는 방법을 배우면서, 네 가지 함수 유형도 살펴봤어요.",
+        "함수 내부 변수의 유효 범위(scope)와 수명에 대해서도 배웠어요.",
+        "이제 드디어 Input과 Output을 배워볼 차례예요.",
+        "이 문서에서는 Output을 배울 거예요.",
+        "Output에는 여러 가지 유형이 있겠죠? 그림을 보여줄 수도 있고, 소리를 들려줄 수도 있고, 그 외 여러 가지 유형이 있겠지만,",
+        "우리는 print() 함수를 사용해서 텍스트 형태로 결과를 사용자에게 보여줄 거예요.",
+        "Input은 바로 다음 문서에서 다룰게요.",
+        "Output과 Input 둘 다 어렵지 않고 쉬우니까 한꺼번에 공부하길 추천해요!"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "배우면 뭐가 좋아요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "명령(함수)을 통해 계산 결과를 사용자에게 띄워서 보여줄 수 있어요",
+        "프로그래머 입장에서도, 앞으로는 Shell에서 변수명을 직접 쳐서 코드 실행 결과를 일일이 확인하지 않아도 돼요.",
+        "Editor를 본격적으로 사용할 수 있어요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어떻게 해요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "print() 함수의 문법은 아주 단순해요!"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "# 가장 단순한 사용법:\nprint(화면에_출력할_인스턴스_또는_인스턴스가_할당된_변수들)\n\n# 자동 줄바꿈을 취소하려면:\nprint(화면에_출력할_인스턴스_또는_인스턴스가_할당된_변수들, end = '')\n\n# 쉼표로 구분해서 전달하는 여러 인수들을 띄어쓰기가 아닌 다른 문자로 구분하려면:\nprint(화면에_출력할_인스턴스_또는_인스턴스가_할당된_변수들, sep = '구분문자열')"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "예를 들면요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "print() 함수의 가장 기본적인 기능은, 다음과 같이 명령해서 변수에 할당된 값을 화면에 출력하는 거예요. 그러면 코드 실행이 정상적으로 이루어졌는지, 내가 생각한 대로 코드가 실행되고 있는지 확인할 수 있어요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "a = 1\nb = 10\nc = a + b\nprint(c)\n"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "print() 함수는 파라미터는 있는데 반환은 하지 않는 함수에 해당해요.",
+        "그래서 다음과 같이 작성하고 코드를 실행하면, None이 화면에 뜨는 것을 확인할 수 있어요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "x = print('아무거나')\nprint(x)"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "None은 아무것도 할당되어 있지 않다는 뜻이에요. 0과는 달라요. 집합으로 비유하자면 공집합 비슷한 거예요.",
+        "print() 함수의 파라미터는 개수가 정해져 있지 않아요. 그래서 인수(argument, 전달하는 인스턴스)를 다음과 같이 여러 개 전달할 수 있어요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "print(1, 2, 3)"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "그러면 다음과 같이 각 인스턴스가 한 칸씩 공백을 두고 출력돼요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "1 2 3"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "이 공백을 다른 문자로 바꾸려면, print() 함수의 sep 파라미터가 기본 값인 공백이 아니라 다른 문자열을 사용하도록 다음과 같이 인수를 전달하면 돼요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "print(1, 2, 3, sep='&')"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "위 코드를 실행하면 다음과 같은 결과가 출력돼요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "1&2&3"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "print 함수는 자동으로 줄 바꿈을 해줘요. 확인하기 위해서 다음 코드를 에디터에 넣고 실행해보세요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "print('아이직:')\nprint('인공지능 직선주로')"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "그럼 다음과 같이 출력될 거예요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "아이직:\n인공지능 직선주로"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "언젠가는 print()가 자동으로 해주는 줄바꿈이 달갑지 않은 순간이 올 거예요. 그 때는 print() 함수의 end 파라미터가 기본 값인 줄바꿈 문자(\\n)를 사용하지 않도록, end 파라미터에 다음과 같이 다른 문자열을 인수로 전달해주면 돼요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "print('아이직: ', end='')   # 출력 후 아무 조치도 하지 않도록 end에 빈 문자열을 전달\nprint('인공지능 직선주로')"
+    },
+    {
+      "type": "paragraph",
+      "text": "위 코드의 실행 결과는 다음과 같아요."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "아이직: 인공지능 직선주로"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "저도 해볼래요!"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "내가 가장 좋아하는 노래 가사나 시를 보기 좋게 출력해보세요.",
+        "가사 표현상 줄을 바꿔야 할 부분에서 줄을 바꿔주세요.",
+        "print()를 한 번만 사용해서도 할 수 있고(여러 줄 문자열), 여러 번 사용해서도 할 수 있어요."
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd83445bb-0ca0-4273-be35-e3f1a4b337ae%2FUntitled.png?table=block&id=d297cb47-5a60-44f4-965a-8c310ae0f5ed&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "현재 위치: ‣ "
+    }
+  ],
+  "fetchedAt": "2026-04-25T10:37:45.623Z"
+}

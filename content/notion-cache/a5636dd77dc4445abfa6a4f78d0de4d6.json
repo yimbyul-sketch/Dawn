@@ -1,0 +1,91 @@
+{
+  "id": "a5636dd77dc4445abfa6a4f78d0de4d6",
+  "title": "[ABPYCL01] 진위(bool)",
+  "blocks": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어디쯤 왔어요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "프로그램을 만들기 위한 기본 재료인 클래스와, 그 클래스의 인스턴스에 대해 배운 적이 있죠?",
+        "이 문서에서는, 또 다른 클래스 중 하나인 bool(진위)에 대해 배워요.",
+        "진위란 참과 거짓을 말해요.",
+        "그래서 진위 클래스의 인스턴스의 종류는 두 개뿐이에요.",
+        "True",
+        "False"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "배우면 뭐가 좋아요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "코드를 통해 참(True)과 거짓(False)을 다룰 수 있어요.",
+        "‘X가 참일 경우 A 명령을 수행하고, X가 거짓일 경우 B 명령을 수행해라’는 명령이 가능해져요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어떻게 해요? 예를 들면요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "클래스의 이름은 bool이에요.",
+        "bool형 인스턴스의 종류는 두 가지밖에 없어요. ",
+        "하나는 참을 뜻하는 True고, 다른 하나는 거짓을 뜻하는 False예요.",
+        "첫 글자인 T와 F를 반드시 대문자로 입력해야만 해요.",
+        "앞으로도 대소문자는 엄격히 구분해서 사용하세요. t와 T는 완전히 다른 글자거든요."
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fcac4e9da-4273-4bb4-a671-5c1215dd42d2%2FUntitled.png?table=block&id=437368cb-3c05-4dc5-8df8-5985660fab6f&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "저도 해볼래요!"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "문제1: IDLE Shell에, 에러가 발생하지 않도록 True와 False를 입력해보세요.",
+        "문제2: 다음과 같이 True와 False를 이용한 산술 연산이 가능한데요. 그렇다면 True와 False는 각각 어떤 숫자와 대응할까요?",
+        "Hint: Shell에 int(True)와 int(False)를 각각 입력해보세요."
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc72f49b2-5797-4cc5-841b-41bf8f6b8f55%2FUntitled.png?table=block&id=9058308a-d2e5-4c70-bb47-92db4ea1c9c5&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "진위 클래스에 대해 구체적으로 재미있는 실습은 비교 연산자, 논리 연산자, 멤버십 연산자, 조건문, 반복문을 배우면서 차차 순서대로 하게 될 거예요.",
+        "특히 조건문에서는 상황에 따라 다른 명령을 수행하도록 코드를 작성하는 방법을 다양하게 알아볼 거예요."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "현재 위치: ‣"
+    }
+  ],
+  "fetchedAt": "2026-04-25T10:37:08.412Z"
+}

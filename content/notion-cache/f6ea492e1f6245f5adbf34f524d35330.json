@@ -1,0 +1,162 @@
+{
+  "id": "f6ea492e1f6245f5adbf34f524d35330",
+  "title": "[ABPYPR01] 비교연산자",
+  "blocks": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어디쯤 왔어요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "진위를 표현하는 클래스 bool에 대해 배웠죠?",
+        "bool의 인스턴스는 True(참)와 False(거짓)밖에 없다는 것도 알았을 거예요",
+        "이제 컴퓨터에게 명제의 참 거짓 판단을 시키고, 그 결과를 bool 인스턴스로 받아볼 거예요.",
+        "이 문서에서는 비교연산자가 사용된 식의 진위를 판별해볼게요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "배우면 뭐가 좋아요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "‘따지기’는 인지적 에너지를 많이 소비해야 하는 작업이에요.",
+        "그런데 비교연산자를 배우면 비교하는 작업을 컴퓨터에게 시킬 수 있어요.",
+        "즉, 생각에 필요한 우리 에너지를 아낄 수 있어요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어떻게 해요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "비교연산자의 종류는 다음과 같아요.",
+        "크다 >",
+        "작다 <",
+        "크거나 같다 >=",
+        "작거나 같다 <=",
+        "같다 ==",
+        "같지 않다 !=",
+        "비교연산자를 이용해서 다음과 같이 표현할 수 있어요.",
+        "A가 B보다 크다"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "A > B"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "A가 B보다 작다"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "A < B"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "A가 B보다 크거나 같다"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "A >= B"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "A가 B보다 작거나 같다"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "A <= B"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "A가 B와 같다"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "A == B"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "A가 B와 같지 않다"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "A != B"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Python은 비교연산자가 사용된 식을 판단해서 True(참) 또는 False(거짓)을 반환해요.",
+        "반환되는 True와 False는 직전 문서에서 배웠던 bool 클래스의 인스턴스예요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "예를 들면요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "위에서 설명한 비교 연산자들을 Shell에서 직접 실습해볼까요? 숫자에 별 의미는 없으니까, 마음에 드는 숫자로 바꿔서 실습해보세요."
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F058b23f6-6f84-4fdc-a990-b88cb68d7ed1%2FUntitled.png?table=block&id=66dec144-7c5a-4c06-a833-ed51b2b5a145&cache=v2",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "저도 해볼래요!"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "다음 다섯 개의 수식 중 틀린 것은 무엇일까요? 직접 Shell에 입력해서 True 또는 False를 구해보세요.",
+        "2**10 == 1024",
+        "2**13 == 8092",
+        "2**14 == 16384",
+        "2**15 == 32768",
+        "2**32 == 4294967296"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "현재 위치: ‣ "
+    }
+  ],
+  "fetchedAt": "2026-04-25T10:37:22.207Z"
+}

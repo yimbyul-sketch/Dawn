@@ -1,0 +1,92 @@
+{
+  "id": "3ef073db4ae54691a4e97d6016c63958",
+  "title": "[AMPYPR03] 식별 연산자",
+  "blocks": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어디쯤 왔어요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "다른 인스턴스에는 다른 고유번호가 부여된다는 사실을 배웠어요.",
+        "id() 함수를 이용해서 고유번호끼리 비교하면 같은 인스턴스인지, 다른 인스턴스인지 확인할 수 있었어요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "배우면 뭐가 좋아요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "그런데 id() 함수를 이용해 일일이 인스턴스의 동일 여부를 확인하는 것은 너무나 번거로워요.",
+        "이럴 때 사용할 수 있는 것이 식별 연산자예요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "어떻게 해요? 예를 들면요?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "id 값이 동일한지 또는 다른지 비교해주는 연산자가 있는데, 바로 is와 is not이에요. 이것들을 식별연산자라고 불러요.",
+        "값이 다른 경우에, is 연산자를 이용한 진위 판단 결과는 당연히 False예요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "a = 1\nb = a\nb += 1   # a는 1, b는 2가 된 상태\n\nprint(a == b)  # False\nprint(a is b)  # False"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "값이 같은 경우에도, is 연산자를 이용한 진위 판단 결과는 False일 수 있어요. 가지고 있는 값은 같더라도 다른 인스턴스일 수 있기 때문이죠."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "c = [1]\nd = c\nd += [2]\ne = [1, 2]\n\nprint(c == d)  # True\nprint(d == e)  # True\nprint(c is d)  # True\nprint(d is e)  # False "
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "그러니까 is와 is not을 ==(같다), !=(같지 않다)와 헷갈리지 않도록 특별히 주의하세요."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "저도 해볼래요!"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "다음 코드의 실행 결과를 예측해본 다음, 코드를 실행해서 내 예측과 맞는지 확인하세요.",
+        "클래스의 불변과 가변에 대한 개념이 흔들리면 이 문제를 맞힐 수 없어요."
+      ]
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "a1 = 1\nb1 = [1]\nc1 = [1]\n\na2 = a1\nb2 = b1\nc2 = c1\n\na2 += 2\nb2 += [2]\nc2 = c2 + [2]\n\nprint(a1 is a2)\nprint(a1 == a2)\nprint(b1 is b2)\nprint(b1 == b2)\nprint(c1 is c2)\nprint(c1 == c2)"
+    },
+    {
+      "type": "paragraph",
+      "text": "현재 위치: ‣ "
+    }
+  ],
+  "fetchedAt": "2026-04-25T10:37:34.706Z"
+}
