@@ -22,6 +22,21 @@ export function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
         <span>아이직 시험공부장</span>
       </Link>
 
+      <Link
+        href="/quiz"
+        onClick={onNavigate}
+        className={clsx(
+          "mb-3 flex items-center gap-2 rounded-xl px-3 py-3 font-semibold transition",
+          pathname.startsWith("/quiz")
+            ? "bg-[rgb(var(--accent-soft))] text-[rgb(var(--accent))]"
+            : "hover:bg-[rgb(var(--bg-elev))]"
+        )}
+      >
+        <span className="text-xl" aria-hidden>🎯</span>
+        <span>예상문제 풀기</span>
+        <span aria-hidden className="ml-auto text-xs">→</span>
+      </Link>
+
       {units.map((unit) => {
         const total = unit.pages.length;
         const done = hydrated
