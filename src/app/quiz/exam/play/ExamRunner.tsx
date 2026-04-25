@@ -27,12 +27,28 @@ export function ExamRunner({ countParam }: { countParam: string }) {
     return Math.min(n, quizzes.length);
   }, [countParam]);
 
-  const [questions] = useState(() => shuffle(quizzes).slice(0, targetCount));
-  const [answers, setAnswers] = useState<(number | null)[]>(() =>
-    new Array(questions.length).fill(null)
-  );
+  // hydration 안전: shuffle/Date는 클라이언트에서만
+  const [questions, setQuestions] = useState<typeof quizzes>([]);
+  const [answers, setAnswers] = useState<(number | null)[]>([]);
   const [index, setIndex] = useState(0);
-  const [startedAt] = useState(() => new Date().toISOString());
+  const [startedAt, setStartedAt] = useState<string>("");
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const picked = shuffle(quizzes).slice(0, targetCount);
+    setQuestions(picked);
+    setAnswers(new Array(picked.length).fill(null));
+    setStartedAt(new Date().toISOString());
+    setReady(true);
+  }, [targetCount]);
+
+  if (!ready || questions.length === 0) {
+    return (
+      <div className="card p-6 text-center text-[rgb(var(--fg-muted))]">
+        시험 문제 준비 중…
+      </div>
+    );
+  }
 
   const q = questions[index];
   const answeredCount = answers.filter((a) => a !== null).length;
